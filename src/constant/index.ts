@@ -1,3 +1,5 @@
+export const isProd = false;
+
 export const medias = {
     telegram: 'https://t.me/AntexAI',
     x: 'https://x.com/AntexAi',
@@ -10,3 +12,5 @@ export const medias = {
 export const env = {
     SYSTEM_NAME: 'AnteX'
 }
+
+export const tradeUrl = isProd ? "https://app.antex.ai" : "https://testnet.antex.ai"

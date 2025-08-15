@@ -63,7 +63,7 @@ function FooterSection() {
           {/* Links */}
           <div className={twMerge("justify-end pc ml-auto sm:min-w-[616px] grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(184px,1fr))] gap-8 transition-all duration-700 delay-200", inViewport ? "translate-y-0" : "translate-y-20")}>
             <div>
-              <div className="text-lg font-semibold mb-4">{t("Products", { defaultValue: "" })}</div>
+              <div className="text-lg font-semibold mb-4">{t("Products", { defaultValue: "Products" })}</div>
               <ul className="space-y-4">
                 {products.map((item) => (
                   <li key={item.name}>
@@ -103,7 +103,7 @@ function FooterSection() {
           <div className={twMerge("sp grid-rows-[repeat(3, 1fr)] md:grid-rows-none md:ml-auto sm:min-w-[616px] grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(184px,1fr))] gap-8 transition-all duration-700 delay-200", inViewport ? "translate-y-0" : "translate-y-20")}>
             <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-base font-semibold">{t("Products", { defaultValue: "" })}</AccordionTrigger>
+                <AccordionTrigger className="text-base font-semibold">{t("Products", { defaultValue: "Products" })}</AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-4">
                     {products.map((item) => (
@@ -117,7 +117,7 @@ function FooterSection() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-base font-semibold">{t("Services", { defaultValue: "" })}</AccordionTrigger>
+                <AccordionTrigger className="text-base font-semibold">{t("Services", { defaultValue: "Services" })}</AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-4">
                     {services.map((item) => (

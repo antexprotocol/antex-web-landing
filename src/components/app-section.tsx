@@ -18,7 +18,7 @@ function AppSection() {
 
         <img src="/home/app-section.png" alt="app" width={670} height={477} className={twMerge("sp mb-6 w-full max-w-screen transition-all duration-700", inViewport ? "translate-y-0" : "translate-y-20")} />
 
-        <div className={twMerge("flex items-center gap-2 md:block md:space-x-4 transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")}>
+        <div className={twMerge("flex flex-wrap items-center gap-2 md:space-x-4 transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")}>
           <I18nLink href="/future" className="flex-1 bg-brand hover:bg-brand/80 text-white md:min-w-[200px] h-8 md:h-16 rounded-md md:rounded-xl inline-flex items-center justify-center text-xs md:text-lg">
             {t("web.home.app.button_1", { defaultValue: "Trade Now" })}
           </I18nLink>

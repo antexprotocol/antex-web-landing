@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { tradeUrl } from "../constant";
 
 interface I18nLinkProps {
   href: string;
@@ -18,7 +19,7 @@ export function I18nLink({ href, ...props }: I18nLinkProps) {
   const path = href.startsWith("/") ? href.slice(1) : href;
 
   // Construct the localized path
-  const localizedHref = `/${i18n.language}/${path}`;
+  const localizedHref = `${tradeUrl}/${i18n.language}/${path}`;
 
   return <a href={localizedHref} {...props} />;
 }
