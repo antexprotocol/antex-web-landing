@@ -10,7 +10,7 @@ const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 // https://astro.build/config
 export default defineConfig({
-  base: isGithubPages ? '/antex-web-landing' : '/',
+  base: isGithubPages ? '/antex-web-landing/' : '/',
   integrations: [
     react(),
     mdx(),
