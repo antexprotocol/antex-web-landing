@@ -6,7 +6,8 @@ export const medias = {
     twitter: 'https://x.com/AntexAi',
     medium: 'https://medium.com/@antexai',
     gitbook: 'https://antex-1.gitbook.io/doc/',
-    linkTr: 'https://linktr.ee/antex.ai'
+    linkTr: 'https://linktr.ee/antex.ai',
+    discord: 'https://discord.gg/kUervM2y'
 }
 
 export const env = {
@@ -21,7 +22,7 @@ export const SEO_CONFIG = {
     title: "AnteX Protocol",
     description: "Delivering a decentralized, secure full-chain trading platform.",
     url: "https://antex.ai/",
-    image: "https://antex.ai/favicons/favicon-32x32.svg",
+    image: "https://github.com/antexprotocol/brand/blob/main/media/AnteX_poster.png",
     type: "website",
     locale: "en_US",
     twitter: {
