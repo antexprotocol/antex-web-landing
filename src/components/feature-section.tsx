@@ -68,7 +68,7 @@ export default function FeatureSection() {
       {features.map((item, idx) => (
         <div key={idx} className="h-screen snap-start px-[120px] py-[80px] flex justify-between items-center">
           <div className="max-w-[566px]">
-            <div className="text-[80px] leading-[88px] font-light tracking-widest mb-14">{t("web.home.trade.feature")}</div>
+            <div className="text-[80px] leading-[88px] font-light tracking-widest mb-14">{t("web.home.trade.feature", { defaultValue: "Core Features" })}</div>
             <h2 className={twMerge("text-[44px] font-bold text-transparent mb-4 bg-clip-text bg-gradient-to-r from-0% from-white via-brand via-46.43% to-brand transition-all duration-700", idx === active ? "translate-y-0" : "translate-y-20")}>{t(item.title)}</h2>
             <h3 className={twMerge("text-2xl text-t3 leading-[140%] min-h-[102px] mb-14 transition-all duration-700 delay-200", idx === active ? "translate-y-0" : "translate-y-20")}>{t(item.desc)}</h3>
             <div className={twMerge("space-x-4 pager transition-all duration-700 delay-400", idx === active ? "translate-y-0" : "translate-y-20")}>

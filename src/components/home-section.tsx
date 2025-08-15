@@ -27,16 +27,16 @@ function HomeSection() {
           <img src="/brand/AnteX-logo-Horizontal-White.svg" alt="logo" width={154} height={37} />
         </I18nLink>
         <div className="mx-auto h-full gap-8 px-10 inline-flex items-center rounded-full border border-white/20">
-          <I18nLink target="_blank" href={medias?.gitbook}>{t("web.home.docs")}</I18nLink>
+          <I18nLink target="_blank" href={medias?.gitbook}>{t("web.home.docs", { defaultValue: "Docs" })}</I18nLink>
           <I18nLink target="_blank" href={medias?.linkTr} className="">
-            {t("web.home.community")}
+            {t("web.home.community", { defaultValue: "Community" })}
           </I18nLink>
           <I18nLink href="/explorer" className="">
-            {t("web.home.status")}
+            {t("web.home.status", { defaultValue: "Status" })}
           </I18nLink>
         </div>
         <I18nLink href="/future" className="pc hover-none hover:bg-brand/80 text-white rounded-full px-5 h-full inline-flex items-center justify-center transition-all bg-[#6552FE]">
-          {t("web.home.launch")}
+          {t("web.home.launch", { defaultValue: "Launch App" })}
         </I18nLink>
       </header>
 
@@ -61,7 +61,7 @@ function HomeSection() {
               window.location.href = "/future";
             }}
           >
-            <span>{t("web.home.get_started")}</span>
+            <span>{t("web.home.get_started", { defaultValue: "Get Started" })}</span>
           </button>
         </div>
       </div>
