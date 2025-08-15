@@ -21,7 +21,7 @@ export const SEO_CONFIG = {
     title: "AnteX Protocol",
     description: "Delivering a decentralized, secure full-chain trading platform.",
     url: "https://antex.ai/",
-    image: "https://antex.ai/favicon-32x32.svg",
+    image: "https://antex.ai/favicons/favicon-32x32.svg",
     type: "website",
     locale: "en_US",
     twitter: {
