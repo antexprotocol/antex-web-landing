@@ -1,4 +1,4 @@
-import{u as w,j as t,t as r}from"./bundle-mjs.DQoj8Pxq.js";import{r as c}from"./index.CGj_12n1.js";import{K as j}from"./splines.BAvGl27h.js";import"./i18nInstance.CHFDjdcJ.js";/**
+import{u as w,j as t,t as r}from"./bundle-mjs.DQoj8Pxq.js";import{r as c}from"./index.CGj_12n1.js";import{K as j}from"./splines.fV-WR_p3.js";import"./i18nInstance.CHFDjdcJ.js";/**
  * @license lucide-react v0.539.0 - ISC
  *
  * This source code is licensed under the ISC license.
