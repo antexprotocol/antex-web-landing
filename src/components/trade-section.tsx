@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
 import { useRef } from "react";
 import { useInViewport } from "ahooks";
 import { twMerge } from "tailwind-merge";
@@ -14,7 +13,7 @@ function TradeSection() {
         {t("web.home.trade.title", { defaultValue: "Trade anytime, anywhere" })}
       </h3>
       <h4 className={twMerge("text-t2 text-lg font-light transition-all duration-700 delay-200", inViewport ? "translate-y-0" : "translate-y-20")}>{t("web.home.trade.sub_title", { defaultValue: "User-Owned Secure and Fair Decentralized Exchange" })}</h4>
-      <Image src="/home/trade-screenshot-2.png" className={twMerge("max-w-[60vw] mt-14 transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")} alt="trade screenshot" width={1200} height={670} />
+      <img src="/home/trade-screenshot-2.png" className={twMerge("max-w-[60vw] mt-14 transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")} alt="trade screenshot" width={1200} height={670} />
     </section>
   );
 }

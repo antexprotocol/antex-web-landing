@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
@@ -129,7 +128,7 @@ export default function FeatureSection() {
             </div>
           </div>
           <div className={twMerge("size-[512px] mr-10 inline-flex justify-center items-center bg-p2 rounded-[30px] transition-all duration-700", idx === active ? "translate-y-0" : "translate-y-20")}>
-            <Image src={`/home/feature-${idx + 1}.png`} alt={t(item.title)} width={320} height={320} />
+            <img src={`/home/feature-${idx + 1}.png`} alt={t(item.title)} width={320} height={320} />
           </div>
         </div>
       ))}
