@@ -1,0 +1,1 @@
+import{u as o,j as a}from"./bundle-mjs.DQoj8Pxq.js";import{t as e}from"./index.wFTETFyA.js";function l({href:t,...s}){const{i18n:n}=o();if(t.startsWith("http"))return a.jsx("a",{href:t,...s});const i=t.startsWith("/")?t.slice(1):t,r=`${e}/${n.language}/${i}`;return a.jsx("a",{href:r,...s})}export{l as I};
