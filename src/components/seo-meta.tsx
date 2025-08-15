@@ -6,8 +6,12 @@ export const SeoMeta = () => {
     <>
       {/* 基础 SEO */}
       <title>{c.title}</title>
+      <meta name="theme-color" content="#7878fa" />
       <meta name="description" content={c.description} />
       <meta name="robots" content={c.robots} />
+
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={c.type} />
