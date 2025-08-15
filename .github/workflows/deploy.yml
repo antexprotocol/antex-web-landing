@@ -19,7 +19,7 @@ jobs:
           node-version: '20'  # 或您项目使用的版本
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Build Astro project
         run: npm run build:gh
