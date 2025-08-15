@@ -1,18 +1,24 @@
-// addDefaultValue.js
-const { Project, SyntaxKind } = require("ts-morph");
-const fs = require("fs");
-const path = require("path");
+import { Project, SyntaxKind } from "ts-morph";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// ESM 下获取 __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const base = "../";
 
 // i18n 语言文件路径
-const i18nFile = path.resolve(__dirname, "src/i18n/en.json");
+const i18nFile = path.resolve(__dirname, base, "src/i18n/en.json");
 const i18nData = JSON.parse(fs.readFileSync(i18nFile, "utf-8"));
 
 // TSX 文件目录
-const componentsDir = path.resolve(__dirname, "src/components");
+const componentsDir = path.resolve(__dirname, base, "src/components");
 
 // 初始化项目
 const project = new Project({
-  tsConfigFilePath: path.resolve(__dirname, "tsconfig.json"),
+  tsConfigFilePath: path.resolve(__dirname, base, "tsconfig.json"),
 });
 
 // 添加源文件（只扫描 components 下的 .tsx 文件）
