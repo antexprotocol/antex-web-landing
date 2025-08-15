@@ -8,7 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "formate-i18n": "node scripts/add-default-value.js",
-    "gh": "astro build && npx gh-pages -d dist"
+    "gh": "GITHUB_PAGES=true astro build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",

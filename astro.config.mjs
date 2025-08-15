@@ -6,15 +6,11 @@ import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
-const defaultLocale = "en";
-const locales = {
-  en: "en-US", // the `defaultLocale` value must present in `locales` keys
-  es: "es-ES",
-  fr: "fr-CA",
-};
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 // https://astro.build/config
 export default defineConfig({
+  base: isGithubPages ? '/antex-web-landing' : '/',
   integrations: [
     react(),
     mdx(),
