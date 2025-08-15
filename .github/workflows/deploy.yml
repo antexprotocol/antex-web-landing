@@ -3,20 +3,20 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # 或您希望触发部署的分支
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20'  # 或您项目使用的版本
 
       - name: Install dependencies
         run: npm ci
@@ -25,7 +25,7 @@ jobs:
         run: npm run build:gh
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
