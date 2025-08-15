@@ -3,7 +3,7 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches:
-      - main  # 或您希望触发部署的分支
+      - others
 
 jobs:
   build-and-deploy:
