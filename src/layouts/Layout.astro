@@ -1,3 +1,7 @@
+---
+import { SeoMeta } from "../components/seo-meta";
+---
+
 <!doctype html>
 <html lang="en" class="dark" data-mode="dark">
 	<head>
@@ -7,6 +11,7 @@
 		<meta name="generator" content={Astro.generator} />
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<title>AnteX</title>
+		<SeoMeta />
 	</head>
 	<body class="app-root">
 		<slot />
