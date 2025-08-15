@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./halo.css";
 @plugin "tailwindcss-animate";
 
 
@@ -14,7 +15,7 @@
   --font-size: 16px;
   --tv-font-size: 12;
   @media (width < 48rem /* 768px */) {
-    /* --font-size: 15px; */
+    --font-size: 14px;
     --tv-font-size: 10;
   }
 
@@ -321,4 +322,34 @@ section[aria-label*="Notification"] {
 
 .gradient-slide{
   animation: gradient-slide 3s linear infinite;
+}
+
+.nav-item{
+  position: relative;
+}
+
+.nav-item::before,
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1px;           /* 竖线宽度 */
+  height: 0;            /* 初始高度 0 */
+  background: var(--border);     /* 竖线颜色 */
+  transition: height 0.2s ease;
+}
+
+.nav-item::before {
+  left: 0;
+}
+.nav-item::after {
+  right: 0;
+}
+
+/* .nav-item{
+  background: #000;
+} */
+.nav-item:hover::before,
+.nav-item:hover::after {
+  height: 100%;
 }

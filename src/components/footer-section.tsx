@@ -48,13 +48,13 @@ function FooterSection() {
   const [inViewport] = useInViewport(ref);
 
   return (
-    <footer id="footer" className={twMerge("px-4 md:px-0 snap-start bg-gradient-to-b from-[#070113] to-[#630DFF] text-t3 text-sm ")}>
+    <footer id="footer" className={twMerge("relative z-20 shadow-[0_0px_50px_25px_#000000ee]", "px-4 md:px-0 snap-start bg-gradient-to-b from-[#070113] to-[#630DFF] text-t3 text-sm ")}>
       <div className="bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand)_40%,transparent)_1.5px,transparent_1.5px)] bg-[length:40px_40px] bg-repeat">
         <div className="max-w-[1200px] mx-auto py-20 flex flex-col md:flex-row md:gap-0">
           {/* Logo and Description */}
           <div className={twMerge("md:w-1/4 flex flex-col gap-2 md:gap-6 transition-all duration-700", inViewport ? "translate-y-0" : "translate-y-20")} ref={ref}>
             <div className="flex items-center gap-3">
-              <img src="/brand/AnteX-logo-Horizontal-White.svg" alt="logo" width={154} height={37} />
+              <img src="/brand/AnteX-logo-Horizontal-White.svg" className="md:w-[154px] w-[120px]" alt="logo" />
             </div>
             <div className="text-sm md:text-base leading-relaxed">
               {t("web.home.title", { defaultValue: "The Blockchain" })}, {t("web.home.title2", { defaultValue: "To Redefine Trading" })}

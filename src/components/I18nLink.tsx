@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { tradeUrl } from "../constant";
+import { cn } from "../utils";
 
 interface I18nLinkProps {
   href: string;
@@ -9,6 +10,10 @@ interface I18nLinkProps {
 
 export function I18nLink({ href, ...props }: I18nLinkProps) {
   const { i18n } = useTranslation();
+
+  if(props?.disabled) {
+    return <div {...props} className={cn(props?.className, '')} />;
+  }
 
   // If href starts with http or https, don't modify it
   if (href.startsWith("http")) {

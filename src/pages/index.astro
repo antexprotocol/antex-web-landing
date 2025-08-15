@@ -7,11 +7,13 @@ import FeatureSectionV2 from "../components/feature-section-v2";
 import AppSection from "../components/app-section";
 import FooterSection from "../components/footer-section";
 import { ReactLayout } from "../layouts/react-layout";
+import { HoverHalo } from "../components/hover-halo";
 ---
 
 <Layout>
   <ReactLayout client:load>
     <>
+      <HoverHalo client:load />
       <HomeSection client:load />
       <FeatureSectionV2 client:load />
       <AppSection client:load />

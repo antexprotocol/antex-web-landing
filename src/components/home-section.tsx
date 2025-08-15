@@ -6,6 +6,8 @@ import { medias } from "../constant";
 // import Image from "astro/components/Image.astro";
 import { LogoSpline } from "./splines";
 import { I18nLink } from "./I18nLink";
+import { ChevronDown } from "lucide-react";
+import { cn } from "../utils";
 
 function HomeSection() {
   const { t } = useTranslation();
@@ -22,17 +24,34 @@ function HomeSection() {
         <LogoSpline />
       </div>
 
-      <header className="w-[1200px] text-sm absolute z-3 top-10 left-1/2 -translate-x-1/2 flex items-center justify-between h-12 [&_a:not(.hover-none)]:hover:underline">
+      <header className="w-full md:w-[1200px] text-sm absolute z-3 top-10 left-1/2 -translate-x-1/2 flex items-center justify-between h-12 [&_a:not(.hover-none)]:hover:underline">
         <I18nLink href="/" className="hover-none pc">
           <img src="/brand/AnteX-logo-Horizontal-White.svg" alt="logo" width={154} height={37} />
         </I18nLink>
-        <div className="mx-auto h-full gap-8 px-10 inline-flex items-center rounded-full border border-white/20">
-          <I18nLink target="_blank" href={medias?.gitbook}>{t("web.home.docs", { defaultValue: "Docs" })}</I18nLink>
-          <I18nLink target="_blank" href={medias?.linkTr} className="">
-            {t("web.home.community", { defaultValue: "Community" })}
-          </I18nLink>
-          <I18nLink href="/explorer" className="">
-            {t("web.home.status", { defaultValue: "Status" })}
+        <div className="hover:bg-black z-20 relative mx-auto h-full gap-8 px-10 inline-flex items-center rounded-full border border-white/20">
+          <I18nLink className="text-center w-fit md:w-20" target="_blank" href={medias?.gitbook}>{t("web.home.docs", { defaultValue: "Docs" })}</I18nLink>
+          <div className="group relative h-full text-center w-30 md:w-40 cursor-pointer flex items-center gap-1 justify-center" >
+            <>
+              <p className="relative z-20">{t("web.home.community", { defaultValue: "Community" })}</p>
+              <ChevronDown className="size-4 min-size-4 group-hover:rotate-180 transition duration-300 relative z-20" />
+            </>
+            <div className={cn(
+              "flex flex-col text-t3 [&_a]:py-2 [&_a]:md:py-4 pt-[3rem] absolute top-0 w-full border border-t-transparent rounded-b-2xl bg-black",
+              "overflow-hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-h-0 transition-[max-height] duration-300 delay-0 group-hover:max-h-[24rem]"
+            )}>
+
+              <I18nLink className="hover:text-t1" href={medias.x} target="_blank">X</I18nLink>
+              <I18nLink className="hover:text-t1" href={medias.telegram} target="_blank">Telegram</I18nLink>
+              <I18nLink className="hover:text-t1" href={medias.discord} target="_blank">Discord</I18nLink>
+            </div>
+          </div>
+          <I18nLink className="flex justify-center w-fit md:w-20" href="/" disabled>
+            <div className="relative w-fit">
+              <span className="opacity-40">
+                {t("web.home.status", { defaultValue: "Status" })}
+              </span>
+              <div className="text-white bg-brand rounded-[8px] px-2 absolute origin-right top-0 right-0 whitespace-nowrap translate-x-3/8 -translate-y-1/2 scale-60">Soon</div>
+            </div>
           </I18nLink>
         </div>
         <I18nLink href="/future" className="pc hover-none hover:bg-brand/80 text-white rounded-full px-5 h-full inline-flex items-center justify-center transition-all bg-[#6552FE]">
