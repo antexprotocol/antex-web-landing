@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { env, medias } from "../constant";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@radix-ui/react-accordion";
+import { I18nLink } from "./I18nLink";
 
 const products = [
   // { name: "Buy Crypto", href: "#" },
@@ -67,9 +68,9 @@ function FooterSection() {
               <ul className="space-y-4">
                 {products.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className=" hover:text-white transition">
+                    <I18nLink href={item.href} className=" hover:text-white transition">
                       {item.name}
-                    </a>
+                    </I18nLink>
                   </li>
                 ))}
               </ul>
@@ -108,15 +109,15 @@ function FooterSection() {
                   <ul className="space-y-4">
                     {products.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className=" hover:text-white transition text-sm">
+                        <I18nLink href={item.href} className=" hover:text-white transition text-sm">
                           {item.name}
-                        </a>
+                        </I18nLink>
                       </li>
                     ))}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
+              {/* <AccordionItem value="item-2">
                 <AccordionTrigger className="text-base font-semibold">{t("Services", { defaultValue: "Services" })}</AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-4">
@@ -129,7 +130,7 @@ function FooterSection() {
                     ))}
                   </ul>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-base font-semibold">{t("community", { defaultValue: "Community" })}</AccordionTrigger>
                 <AccordionContent>
