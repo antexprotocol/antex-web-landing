@@ -73,16 +73,13 @@ function HomeSection() {
           <br />
           {t("web.home.subtitle2", { defaultValue: "Through high-performance blockchain technology - a community-driven, user-owned next-generation financial infrastructure." })}
         </h2>
-        <div className={twMerge("transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")}>
+        <I18nLink href="/future" className={twMerge("transition-all duration-700 delay-400", inViewport ? "translate-y-0" : "translate-y-20")}>
           <button
             className={twMerge("shiny-cta mt-12")}
-            onClick={() => {
-              window.location.href = "/future";
-            }}
           >
             <span>{t("web.home.get_started", { defaultValue: "Get Started" })}</span>
           </button>
-        </div>
+        </I18nLink>
       </div>
     </div>
   );
