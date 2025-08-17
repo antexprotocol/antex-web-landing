@@ -1,5 +1,5 @@
 import { useInViewport } from "ahooks";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { medias } from "../constant";
@@ -8,11 +8,15 @@ import { LogoSpline } from "./splines";
 import { I18nLink } from "./I18nLink";
 import { ChevronDown } from "lucide-react";
 import { cn } from "../utils";
+import { useIsMobile } from "../hooks/use-is-mobile";
 
 function HomeSection() {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const [inViewport] = useInViewport(ref);
+
+  const isMobile = useIsMobile()
+  const [visible, setVisible] = useState(false)
 
   return (
     <div id="home-section" ref={ref} className="px-4 md:px-0 snap-start min-h-screen relative overflow-hidden flex justify-between items-center bg-black">
@@ -30,14 +34,15 @@ function HomeSection() {
         </I18nLink>
         <div className="hover:bg-black z-20 relative mx-auto h-full gap-8 px-10 inline-flex items-center rounded-full border border-white/20">
           <I18nLink className="text-center w-fit md:w-20" target="_blank" href={medias?.gitbook}>{t("web.home.docs", { defaultValue: "Docs" })}</I18nLink>
-          <div className="group relative h-full text-center w-30 md:w-40 cursor-pointer flex items-center gap-1 justify-center" >
+          <div onMouseLeave={()=>isMobile && setVisible(false)} onClick={()=>isMobile && setVisible(true)} className="group relative h-full text-center w-30 md:w-40 cursor-pointer flex items-center gap-1 justify-center" >
             <>
               <p className="relative z-20">{t("web.home.community", { defaultValue: "Community" })}</p>
               <ChevronDown className="size-4 min-size-4 group-hover:rotate-180 transition duration-300 relative z-20" />
             </>
             <div className={cn(
               "flex flex-col text-t3 [&_a]:py-2 [&_a]:md:py-4 pt-[3rem] absolute top-0 w-full border border-t-transparent rounded-b-2xl bg-black",
-              "overflow-hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-h-0 transition-[max-height] duration-300 delay-0 group-hover:max-h-[24rem]"
+              "overflow-hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-h-0 transition-[max-height] duration-300 delay-0 group-hover:max-h-[24rem]",
+              visible && "opacity-100 max-h-[24rem]"
             )}>
 
               <I18nLink className="hover:text-t1" href={medias.x} target="_blank">X</I18nLink>
