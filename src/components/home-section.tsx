@@ -19,7 +19,7 @@ function HomeSection() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <div id="home-section" ref={ref} className="px-4 md:px-0 snap-start min-h-screen relative overflow-hidden flex justify-between items-center bg-black">
+    <div id="home-section" ref={ref} className="px-4 md:px-0 snap-start min-h-screen overflow-hidden flex justify-between items-center bg-black">
       <img src="/home/new-home-bg.svg" alt="home" width={1600} height={2095} className=" absolute inset-x-[8.3%] w-[83.33%] z-0" />
       <div className="absolute inset-x-0 top-0 h-[30vh] z-1 bg-gradient-to-b from-black  to-transparent"></div>
       <div className="absolute inset-x-0 bottom-0 h-[32.88vh] z-1 bg-gradient-to-t from-black  to-transparent"></div>
@@ -28,7 +28,7 @@ function HomeSection() {
         <LogoSpline />
       </div>
 
-      <header className="w-full md:w-[1200px] text-sm absolute z-3 top-10 left-1/2 -translate-x-1/2 flex items-center justify-between h-12 [&_a:not(.hover-none)]:hover:underline">
+      <header className="w-full md:w-[1200px] text-sm absolute z-[4] top-10 left-1/2 -translate-x-1/2 flex items-center justify-between h-12 [&_a:not(.hover-none)]:hover:underline">
         <I18nLink href="/" className="hover-none pc">
           <img src="/brand/AnteX-logo-Horizontal-White.svg" alt="logo" width={154} height={37} />
         </I18nLink>
@@ -64,7 +64,7 @@ function HomeSection() {
         </I18nLink>
       </header>
 
-      <div ref={ref} className="mx-auto max-w-[1200px] text-center z-3 mt-[5%]">
+      <div ref={ref} className="mx-auto max-w-[1200px] text-center z-[3] mt-[5%] relative">
         <h1 className={twMerge("text-4xl md:text-[72px] leading-none md:leading-[80px] text-transparent text-center font-bold bg-clip-text bg-linear-262 from-[#7878FA] from-20% via-white via-44% to-white transition-all duration-700", inViewport ? "translate-y-0" : "translate-y-20")}>
           {t("web.home.title", { defaultValue: "The Blockchain" })}
           <br />
