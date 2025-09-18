@@ -7,7 +7,7 @@ export const medias = {
     medium: 'https://medium.com/@antexai',
     gitbook: 'https://antex-1.gitbook.io/doc/',
     linkTr: 'https://linktr.ee/antex.ai',
-    discord: 'https://discord.gg/j7D3tdpwRJ'
+    discord: 'https://discord.com/invite/AnteX'
 }
 
 export const env = {
