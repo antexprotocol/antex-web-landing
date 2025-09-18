@@ -28,7 +28,7 @@ const community = [
   // { name: "Doc", href: medias.gitbook },
   { name: "Telegram", href: medias.telegram },
   { name: "X", href: medias.x },
-  // { name: "Discord Apps Center", href: "#" },
+  { name: "Discord", href: medias.discord },
   { name: "Gitbook", href: medias.gitbook },
   // { name: "Crypto Wiki", href: "#" },
   // { name: "Crypto Directory", href: "#" },
@@ -38,7 +38,7 @@ const socials = [
   { icon: "/icons/x.svg", alt: "X", href: medias.x },
   { icon: "/icons/telegram.svg", alt: "Telegram", href: medias.telegram },
   { icon: "/icons/medium.svg", alt: "Medium", href: medias.medium },
-  // { icon: "/icons/discord.svg", alt: "Discord", href: "#" },
+  { icon: "/icons/discord.svg", alt: "Discord", href: medias.discord },
   // { icon: "/icons/reddit.svg", alt: "Reddit", href: "#" },
   // { icon: "/icons/github.svg", alt: "GitHub", href: "#" },
 ];

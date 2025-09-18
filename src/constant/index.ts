@@ -1,13 +1,13 @@
 export const isProd = false;
 
 export const medias = {
-    telegram: 'https://t.me/AntexAI',
+    telegram: 'https://t.me/AnteX_Official',
     x: 'https://x.com/AntexAi',
     twitter: 'https://x.com/AntexAi',
     medium: 'https://medium.com/@antexai',
     gitbook: 'https://antex-1.gitbook.io/doc/',
     linkTr: 'https://linktr.ee/antex.ai',
-    discord: 'https://discord.gg/kUervM2y'
+    discord: 'https://discord.gg/j7D3tdpwRJ'
 }
 
 export const env = {
