@@ -98,7 +98,7 @@ export const SolarLayout = () => {
                 </span>
                 <a href={tradeUrl} className="cursor-pointer">
                     <button className="transition-all hover:bg-[#8678FD] hover:text-black hover:border-[#8678FD] cursor-pointer px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
-                        <span>Enter AnteX Testnet</span>
+                        <span className="text-base">Enter AnteX Testnet</span>
                         <svg
                             width="13"
                             height="13"
