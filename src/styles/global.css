@@ -353,3 +353,15 @@ section[aria-label*="Notification"] {
 .nav-item:hover::after {
   height: 100%;
 }
+
+@keyframes solar-rotate {
+  from { transform: rotate(var(--start, 0deg)); }
+  to   { transform: rotate(calc(var(--start, 0deg) + 360deg)); }
+}
+.solar-rotator {
+  transform-origin: center center;
+  will-change: transform;
+  animation-name: solar-rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

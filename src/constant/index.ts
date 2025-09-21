@@ -20,7 +20,7 @@ export const tradeUrl = isProd ? "https://app.antex.ai" : "https://testnet.antex
 // src/config/seo.ts
 export const SEO_CONFIG = {
     title: "AnteX",
-    description: "Delivering a decentralized, secure full-chain trading platform.",
+    description: "A Next-Gen DeFi Infrastructure Delivering Custody Freedom & CEX Performance",
     url: "https://antex.ai/",
     image: "https://raw.githubusercontent.com/antexprotocol/brand/refs/heads/main/media/AnteX_poster.png",
     type: "website",

@@ -8,11 +8,13 @@ import AppSection from "../components/app-section";
 import FooterSection from "../components/footer-section";
 import { ReactLayout } from "../layouts/react-layout";
 import { HoverHalo } from "../components/hover-halo";
+import { SolarLayout } from "../components/solar"
 ---
 
 <Layout>
   <ReactLayout client:load>
     <>
+      <SolarLayout />
       <HoverHalo client:load />
       <HomeSection client:load />
       <FeatureSectionV2 client:load />

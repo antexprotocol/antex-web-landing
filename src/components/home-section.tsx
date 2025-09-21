@@ -19,7 +19,7 @@ function HomeSection() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <div id="home-section" ref={ref} className="px-4 md:px-0 snap-start min-h-screen overflow-hidden flex justify-between items-center bg-black">
+    <div id="home-section" ref={ref} className="relative px-4 md:px-0 snap-start min-h-screen overflow-hidden flex justify-between items-center bg-black">
       <img src="/home/new-home-bg.svg" alt="home" width={1600} height={2095} className=" absolute inset-x-[8.3%] w-[83.33%] z-0" />
       <div className="absolute inset-x-0 top-0 h-[30vh] z-1 bg-gradient-to-b from-black  to-transparent"></div>
       <div className="absolute inset-x-0 bottom-0 h-[32.88vh] z-1 bg-gradient-to-t from-black  to-transparent"></div>
