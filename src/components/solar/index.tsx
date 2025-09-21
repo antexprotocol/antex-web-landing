@@ -20,7 +20,7 @@ export const Solar = ({
                 } as React.CSSProperties
             }
             className={cn(
-                "border-[#6552FE] rounded-full border relative origin-center solar-rotator",
+                "border-[#a397ff]/30 rounded-full border relative origin-center solar-rotator",
                 className
             )}
         >
@@ -33,8 +33,9 @@ export const Solar = ({
 
 export const SolarLayout = () => {
     return (
-        <div className="w-screen h-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6552FE] to-[#000000] relative ">
-            <div className="size-full relative flex items-center justify-center translate-y-[60%]">
+        <div className="w-screen h-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000] relative ">
+            <div className="absolute bg-[url(/home/solar-background.svg)] size-full"></div>
+            <div className="size-full relative flex items-center justify-center translate-y-[60%] z-[1]">
                 <Solar
                     duration={Math.random() * 10 + 20}
                     start={Math.random() * 360}
