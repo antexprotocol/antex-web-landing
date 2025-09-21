@@ -356,7 +356,7 @@ section[aria-label*="Notification"] {
 
 @keyframes solar-rotate {
   from { transform: rotate(var(--start, 0deg)); }
-  to   { transform: rotate(calc(var(--start, 0deg) + 360deg)); }
+  to   { transform: rotate(var(--to, 0deg)); }
 }
 .solar-rotator {
   transform-origin: center center;

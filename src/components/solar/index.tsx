@@ -5,17 +5,21 @@ export const Solar = ({
     start,
     className,
     children,
+    direction
 }: {
     duration;
     start;
     className;
     children;
+    direction
 }) => {
     return (
         <div
             style={
                 {
-                    ["--start" as any]: `${start}deg`,
+                    // ["--direction"]: direction,
+                    ["--start" as any]: `${direction * start}deg`,
+                    ["--to" as any]: `${direction * start + (direction * 360)}deg`,
                     animationDuration: `${duration}s`,
                 } as React.CSSProperties
             }
@@ -38,59 +42,76 @@ export const SolarLayout = () => {
                 <p className="text-center uppercase text-[72px] leading-[1.1]">
                     Redefine Trading <br /> with Blockchain
                 </p>
-                <span className="font-light text-xl text-white/80 ">Trade Anywhere. Own Everything. Stay Secure.</span>
+                <span className="font-light text-xl text-white/80 ">
+                    Trade Anywhere. Own Everything. Stay Secure.
+                </span>
                 <button className="px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
                     <span>Enter AnteX Testnet</span>
-                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429" stroke="white" stroke-width="1.4" />
-                        <path d="M12.2857 1.21434L1.07455 12.4255" stroke="white" stroke-width="1.4" />
+                    <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 13 13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429"
+                            stroke="white"
+                            stroke-width="1.4"
+                        />
+                        <path
+                            d="M12.2857 1.21434L1.07455 12.4255"
+                            stroke="white"
+                            stroke-width="1.4"
+                        />
                     </svg>
                 </button>
             </div>
             <div className="w-screen h-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000] relative ">
                 <div className="absolute bg-[url(/home/solar-background.svg)] size-full"></div>
-                <div className="size-full relative flex items-center justify-center translate-y-[60%] z-[1]">
+                <div className="size-full relative flex items-center justify-center translate-y-[60%] z-[1] opacity-40">
                     <Solar
-                        duration={Math.random() * 10 + 20}
-                        start={Math.random() * 360}
+                        direction={1}
+                        duration={Math.random() * 10 + 10}
+                        start={Math.random() * 90}
                         className="absolute w-[60%] aspect-square"
                         children={
                             <div className="bg-black">
-                                <img className="size-6" src="/brand/AnteX-Symbol-White-NoBG.svg" />
+                                <img className="size-6" src="/home/brand-icon/ANTEX.svg" />
                             </div>
                         }
                     />
                     <Solar
-                        duration={Math.random() * 10 + 30}
-                        start={Math.random() * 360}
+                        direction={-1}
+                        duration={Math.random() * 10 + 10}
+                        start={Math.random() * 90}
                         className="absolute w-[70%] aspect-square"
                         children={
-                            <img
-                                className="size-6"
-                                src="https://testnet.antex.ai/logos/SOL.png"
-                            />
+                            <div className="bg-black">
+                                <img className="size-6" src="/home/brand-icon/SOL.svg" />
+                            </div>
                         }
                     />
                     <Solar
-                        duration={Math.random() * 10 + 40}
-                        start={Math.random() * 360}
+                        direction={1}
+                        duration={Math.random() * 10 + 10}
+                        start={Math.random() * 90}
                         className="absolute w-[80%] aspect-square"
                         children={
-                            <img
-                                className="size-6"
-                                src="https://testnet.antex.ai/logos/ETH.png"
-                            />
+                            <div className="bg-black">
+                                <img className="size-6" src="/home/brand-icon/ETH.svg" />
+                            </div>
                         }
                     />
                     <Solar
-                        duration={Math.random() * 10 + 50}
-                        start={Math.random() * 360}
+                        direction={-1}
+                        duration={Math.random() * 10 + 10}
+                        start={Math.random() * 90}
                         className="absolute w-[90%] aspect-square"
                         children={
-                            <img
-                                className="size-6"
-                                src="https://testnet.antex.ai/logos/BTC.png"
-                            />
+                            <div className="bg-black">
+                                <img className="size-6" src="/home/brand-icon/BTC.svg" />
+                            </div>
                         }
                     />
                 </div>
