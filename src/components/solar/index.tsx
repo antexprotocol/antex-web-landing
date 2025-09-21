@@ -1,3 +1,4 @@
+import { tradeUrl } from "../../constant";
 import { cn } from "../../utils";
 
 export const Solar = ({
@@ -45,27 +46,29 @@ export const SolarLayout = () => {
                 <span className="font-light text-xl text-white/80 ">
                     Trade Anywhere. Own Everything. Stay Secure.
                 </span>
-                <button className="px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
-                    <span>Enter AnteX Testnet</span>
-                    <svg
-                        width="13"
-                        height="13"
-                        viewBox="0 0 13 13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429"
-                            stroke="white"
-                            stroke-width="1.4"
-                        />
-                        <path
-                            d="M12.2857 1.21434L1.07455 12.4255"
-                            stroke="white"
-                            stroke-width="1.4"
-                        />
-                    </svg>
-                </button>
+                <a href={tradeUrl} className="cursor-pointer">
+                    <button className="transition-all hover:bg-[#8678FD] hover:text-black hover:border-[#8678FD] cursor-pointer px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
+                        <span>Enter AnteX Testnet</span>
+                        <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 13 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                            <path
+                                d="M12.2857 1.21434L1.07455 12.4255"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div className="w-screen h-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000] relative ">
                 <div className="absolute bg-[url(/home/solar-background.svg)] size-full"></div>
