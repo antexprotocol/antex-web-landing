@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { tradeUrl } from "../../constant";
 import { cn } from "../../utils";
 
@@ -36,10 +37,59 @@ export const Solar = ({
     );
 };
 
+export const XRayPanel = ({ className }: { className: string }) => {
+
+
+    const updatePosition = (e)=>{
+        const circle = document.getElementById("mask-circle");
+
+        circle.setAttribute("cx", e.clientX + 0 + 'px');
+        circle.setAttribute("cy", e.clientY + 0 + 'px');
+        // document.documentElement.style.setProperty('--x', e.clientX + 'px');
+        // document.documentElement.style.setProperty('--y', e.clientY + 'px');
+    }
+    useEffect(()=>{
+        document.addEventListener('mousemove', updatePosition);
+
+        return ()=>{
+            document.removeEventListener('mousemove', updatePosition)
+        }
+    }, [])
+    return (<>
+
+        <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn(className, '')}>
+
+
+            <rect width="100%" height="100%" fill="url(#pattern0_4823_31859)" fill-opacity="0.08" />
+
+            <rect width="100%" height="100%" fill="url(#pattern-highlight)" mask="url(#mask)" />
+
+            <defs>
+                <pattern id="pattern0_4823_31859" patternUnits="userSpaceOnUse" patternTransform="matrix(48 0 0 48 712 442)" preserveAspectRatio="none" viewBox="1.39876e-06 1.39876e-06 96 96" width="1" height="1">
+                    <g id="pattern0_4823_31859_inner">
+                        <path d="M17 17L17 32L15 32L15 17L6.55671e-07 17L7.43094e-07 15L15 15L15 6.55671e-07L17 7.43094e-07L17 15L32 15L32 17L17 17Z" fill="#fff" />
+                    </g>
+                </pattern>
+
+                <pattern id="pattern-highlight" patternUnits="userSpaceOnUse" patternTransform="matrix(48 0 0 48 712 442)" preserveAspectRatio="none" viewBox="1.39876e-06 1.39876e-06 96 96" width="1" height="1">
+                    <g id="pattern0_4823_31859_panel">
+                        <path d="M17 17L17 32L15 32L15 17L0 17L0 15L15 15L15 0L17 0L17 15L32 15L32 17L17 17Z" fill="rgba(101,81,251,0.6)" />
+                    </g>
+                </pattern>
+                <mask id="mask">
+                    <rect width="1440" height="900" fill="black" />
+                    <circle id="mask-circle" r="200" fill="white" cx="-200" cy="-200" />
+                </mask>
+            </defs>
+        </svg>
+
+    </>)
+}
+
 export const SolarLayout = () => {
     return (
         <div className="relative flex items-center justify-center">
-            <div className="text-white z-[2] w-full absolute top-1/2 left-1/2 -translate-1/2 gap-8 flex flex-col items-center">
+            <div className="text-white z-[2] w-full absolute top-1/2 left-1/2 -translate-1/2 gap-8 flex flex-col items-center -mt-10">
                 <p className="text-center uppercase text-[72px] leading-[1.1]">
                     Redefine Trading <br /> with Blockchain
                 </p>
@@ -71,7 +121,7 @@ export const SolarLayout = () => {
                 </a>
             </div>
             <div className="w-screen h-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000] relative ">
-                <div className="absolute bg-[url(/home/solar-background.svg)] size-full"></div>
+                <XRayPanel className="absolute size-full" />
                 <div className="size-full relative flex items-center justify-center translate-y-[60%] z-[1] opacity-40">
                     <Solar
                         direction={1}

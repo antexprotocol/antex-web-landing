@@ -170,7 +170,8 @@ body {
   --foreground-secondary: hsl(240 4% 55%); /*#888891*/
   --trade-red: #ff005c;
   --trade-green: #07dd87;
-  --brand: #7878fa;
+  /* --brand: #7878fa; */
+  --brand: #6451fb;
   --brand\/10: #7878fa1a;
   --brand\/30: #7878fa4d;
   /* --brand\/10: rgba(120, 120, 250, 0.1); */

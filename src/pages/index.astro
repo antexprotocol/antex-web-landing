@@ -1,5 +1,5 @@
 ---
-import HomeSection from "../components/home-section";
+import {Header} from "../components/header";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import "../styles/shiny-cta.css";
@@ -14,7 +14,8 @@ import { SolarLayout } from "../components/solar"
 <Layout>
   <ReactLayout client:load>
     <>
-      <SolarLayout />
+      <Header client:load/>
+      <SolarLayout client:load/>
       <FeatureSectionV3 client:load />
       <FooterSection client:load />
     </>
