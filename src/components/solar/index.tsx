@@ -73,7 +73,7 @@ export const XRayPanel = ({ className }: { className: string }) => {
 
                 <pattern id="pattern-highlight" patternUnits="userSpaceOnUse" patternTransform="matrix(48 0 0 48 712 442)" preserveAspectRatio="none" viewBox="1.39876e-06 1.39876e-06 96 96" width="1" height="1">
                     <g id="pattern0_4823_31859_panel">
-                        <path d="M17 17L17 32L15 32L15 17L0 17L0 15L15 15L15 0L17 0L17 15L32 15L32 17L17 17Z" fill="rgba(101,81,251,0.6)" />
+                        <path d="M17 17L17 32L15 32L15 17L0 17L0 15L15 15L15 0L17 0L17 15L32 15L32 17L17 17Z" fill="rgba(101,81,251,0.3)" />
                     </g>
                 </pattern>
                 <mask id="mask">
@@ -109,12 +109,12 @@ export const SolarLayout = () => {
                             <path
                                 d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429"
                                 stroke="currentColor"
-                                stroke-width="1.4"
+                                strokeWidth="1.4"
                             />
                             <path
                                 d="M12.2857 1.21434L1.07455 12.4255"
                                 stroke="currentColor"
-                                stroke-width="1.4"
+                                strokeWidth="1.4"
                             />
                         </svg>
                     </button>

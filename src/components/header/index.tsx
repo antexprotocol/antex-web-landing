@@ -1,4 +1,4 @@
-import { medias } from "../../constant"
+import { medias, tradeUrl } from "../../constant"
 import React, { useRef, useState } from "react";
 import { headerNavConfig } from "../../constant/nav";
 
@@ -84,8 +84,31 @@ export const Header = () => {
                 <img className="w-[6.25rem]" src="/brand/AnteX-logo-Horizontal-White.svg" />
 
                 <HeaderNav navConfig={headerNavConfig} />
-
             </div>
+
+            <a href={tradeUrl} className="cursor-pointer">
+                    <button className="transition-all bg-[#8678FD] border-[#8678FD] cursor-pointer px-6 py-2 rounded-xl flex items-center justify-center border gap-1">
+                        <span className="text-sm">Launch App</span>
+                        <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 13 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12.2857 13L12.2857 1.21429L10.6573 1.21429L0.499992 1.21429"
+                                stroke="currentColor"
+                                strokeWidth="1.4"
+                            />
+                            <path
+                                d="M12.2857 1.21434L1.07455 12.4255"
+                                stroke="currentColor"
+                                strokeWidth="1.4"
+                            />
+                        </svg>
+                    </button>
+                </a>
         </div>
     </div>)
 }
