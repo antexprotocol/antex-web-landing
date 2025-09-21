@@ -35,10 +35,10 @@ export const SolarLayout = () => {
     return (
         <div className="relative flex items-center justify-center">
             <div className="text-white z-[2] w-full absolute top-1/2 left-1/2 -translate-1/2 gap-8 flex flex-col items-center">
-                <p className="text-[72px] leading-[1.1]">
+                <p className="text-center uppercase text-[72px] leading-[1.1]">
                     The Blockchain to<br /> Redefine Trading
                 </p>
-                <span className="text-xl text-white/80 ">Trade Anywhere. Own Everything. Stay Secure.</span>
+                <span className="font-light text-xl text-white/80 ">Trade Anywhere. Own Everything. Stay Secure.</span>
                 <button className="px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
                     <span>Enter AnteX Testnet</span>
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
