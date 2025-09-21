@@ -36,7 +36,7 @@ export const SolarLayout = () => {
         <div className="relative flex items-center justify-center">
             <div className="text-white z-[2] w-full absolute top-1/2 left-1/2 -translate-1/2 gap-8 flex flex-col items-center">
                 <p className="text-center uppercase text-[72px] leading-[1.1]">
-                    The Blockchain to<br /> Redefine Trading
+                    Redefine Trading <br /> with Blockchain
                 </p>
                 <span className="font-light text-xl text-white/80 ">Trade Anywhere. Own Everything. Stay Secure.</span>
                 <button className="px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1">
