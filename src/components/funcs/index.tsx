@@ -1,7 +1,24 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { cn } from "@/utils";
+
+
+const carouselConfig = [
+    {
+        title: 'User Asset Self-Custody',
+        src: '/home/func/513.svg'
+    },
+    {
+        title: 'Forced Withdrawal Protocol',
+        src: '/home/func/512.svg'
+    },
+    {
+        title: 'Premier Liquidity & Ultra-Low Slippage',
+        src: '/home/func/516.svg'
+    },
+]
 
 const Card = ({title, src}: any)=>{
-    return (<div className="group after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C] relative z-[1] w-[26.875rem] aspect-[430/600] glow-effect rounded-[32px]">
+    return (<div className="mx-auto group after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C] relative z-[1] w-[26.875rem] aspect-[430/600] glow-effect rounded-[32px]">
         <div className="w-full z-[1] absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center">
             <div className="text-center transition-all duration-400  group-hover:text-[#6451fb] text-2xl text-[#E2E6EE] mb-14">{title}</div>
             <img className="grayscale-100 group-hover:grayscale-0 transition-all duration-400 size-75" src={src} />
@@ -28,6 +45,8 @@ const Union = ({ className }: { className: string }) => {
     );
 };
 export const Funcs = () => {
+    const handlePrev = ()=>{}
+    const handleNext = ()=>{}
     return (
         <div className=" py-4 md:py-30">
             <div className="flex flex-col items-center gap-4 mb-16">
@@ -54,18 +73,18 @@ export const Funcs = () => {
 
 
                     <div>
-
-                        <Carousel className="w-full max-w-md">
-                            <CarouselContent className="">
-                                <CarouselItem><Card src="/home/func/513.svg" title="User Asset Self-Custody"/></CarouselItem>
-                                <CarouselItem><Card src="/home/func/512.svg" title="Forced Withdrawal Protocol"/></CarouselItem>
-                                <CarouselItem><Card src="/home/func/516.svg" title="Premier Liquidity & Ultra-Low Slippage"/></CarouselItem>
+                        <Carousel className="w-full max-w-[calc(28rem*1.5)]" opts={{align: 'center'}}>
+                            <CarouselContent >
+                                {
+                                    carouselConfig?.map((i,index)=>{
+                                        return <CarouselItem className={cn("p-0 max-w-fit", index==0 && "translate-x-3/4", index==carouselConfig?.length-1 && "-translate-x-3/4")} key={i.title}><Card src={i.src} title={i.title} /></CarouselItem>
+                                    })
+                                }
                             </CarouselContent>
-                            <CarouselPrevious className="size-8 [&>svg]:!size-8 border-none" />
-                            <CarouselNext className="size-8 [&>svg]:!size-8 border-none" />
+                            <CarouselPrevious onClick={handlePrev} className="size-8 [&>svg]:!size-8 border-none" />
+                            <CarouselNext onClick={handleNext} className="size-8 [&>svg]:!size-8 border-none" />
                         </Carousel>
                     </div>
-                    {/* <img className="w-[35.5rem]" src="/home/funcs-example.png"/> */}
                 </div>
             </div>
         </div>
