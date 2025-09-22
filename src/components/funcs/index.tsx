@@ -1,42 +1,77 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
 import { cn } from '@/utils'
+import { useState } from 'react'
 
 const carouselConfig = [
   {
     title: 'User Asset Self-Custody',
     src: '/home/func/513.svg',
+    description:
+      'Assets secured by PoS validators, fully verifiable and always user-controlled.',
   },
   {
-    title: 'Forced Withdrawal Protocol',
-    src: '/home/func/512.svg',
+    title: 'Seamless Cross-Chain Interoperability',
+    src: '/home/func/516.svg',
+    description:
+      'Native protocol enables secure transfers across major blockchains.',
   },
   {
     title: 'Premier Liquidity & Ultra-Low Slippage',
-    src: '/home/func/516.svg',
+    src: '/home/func/512.svg',
+    description:
+      'ALP-powered deep liquidity ensures efficient trades with minimal slippage.',
+  },
+  {
+    title: 'Forced Withdrawal Protocol',
+    src: '/home/func/515.svg',
+    description:
+      'On-chain safeguard guaranteeing asset recovery under any failure.',
   },
 ]
 
-const Card = ({ title, src }: any) => {
+const Card = ({
+  title,
+  src,
+  description,
+  isActive = false,
+  index,
+  currentIndex,
+  onClick,
+}: any) => {
+  const isPrevious =
+    index === (currentIndex - 1 + carouselConfig.length) % carouselConfig.length
+  const isNext = index === (currentIndex + 1) % carouselConfig.length
+
   return (
-    <div className='group glow-effect relative z-[1] mx-auto aspect-[430/600] w-[26.875rem] rounded-[32px] after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C]'>
-      <div className='absolute top-1/2 left-1/2 z-[1] flex w-full -translate-1/2 flex-col items-center'>
-        <div className='mb-14 text-center text-2xl text-[#E2E6EE] transition-all duration-400 group-hover:text-[#6451fb]'>
-          {title}
+    <div
+      className={cn(
+        'absolute top-1/2 left-1/2 flex aspect-[430/600] w-[26.875rem] -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out',
+        isActive ? 'z-[5]' : 'z-[1]',
+        isPrevious && 'previous-item -translate-x-[calc(50%+60px)] scale-85',
+        isNext && 'next-item translate-x-[calc(-50%+60px)] scale-85'
+      )}
+    >
+      <div
+        className={cn(
+          'group glow-effect h-full w-full cursor-pointer rounded-[32px] after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C]'
+        )}
+        onClick={onClick}
+      >
+        <div
+          className={cn(
+            'relative z-[4] flex h-full w-full flex-col items-center justify-center'
+          )}
+        >
+          <div className='mb-14 text-center text-2xl text-[#E2E6EE] transition-all duration-400 group-hover:text-[#6451fb]'>
+            {title}
+          </div>
+          <img
+            className='size-75 grayscale-100 transition-all duration-400 group-hover:grayscale-0'
+            src={src}
+          />
+          <p className='text-t3 max-w-5/8 text-center text-xl font-light'>
+            {description}
+          </p>
         </div>
-        <img
-          className='size-75 grayscale-100 transition-all duration-400 group-hover:grayscale-0'
-          src={src}
-        />
-        <p className='text-t3 max-w-5/8 text-center text-xl font-light'>
-          Assets secured by PoS validators, fully verifiable and always
-          user-controlled.
-        </p>
       </div>
     </div>
   )
@@ -60,8 +95,22 @@ const Union = ({ className }: { className: string }) => {
   )
 }
 export const Funcs = () => {
-  const handlePrev = () => {}
-  const handleNext = () => {}
+  const [current, setCurrent] = useState(0)
+
+  const handleNext = () => {
+    setCurrent(prev => (prev + 1) % carouselConfig.length)
+  }
+
+  const handlePrevious = () => {
+    setCurrent(
+      prev => (prev - 1 + carouselConfig.length) % carouselConfig.length
+    )
+  }
+
+  const handleCardClick = (index: number) => {
+    setCurrent(index)
+  }
+
   return (
     <div className='py-4 md:py-30'>
       <div className='mb-16 flex flex-col items-center gap-4'>
@@ -84,37 +133,72 @@ export const Funcs = () => {
             <Union className='absolute top-3/4 left-1/16 opacity-40' />
           </>
 
-          <div>
-            <Carousel
-              className='w-full max-w-[calc(28rem*1.5)]'
-              opts={{ align: 'center' }}
-            >
-              <CarouselContent>
-                {carouselConfig?.map((i, index) => {
+          <div className='relative flex h-[600px] w-full items-center justify-center'>
+            <div className='relative flex h-full w-full max-w-[600px] items-center justify-center'>
+              {/* Custom Carousel Container */}
+              <div className='relative flex h-full w-full items-center justify-center'>
+                {carouselConfig?.map((item, index) => {
+                  const isActive = index === current
                   return (
-                    <CarouselItem
-                      className={cn(
-                        'max-w-fit p-0',
-                        index == 0 && 'translate-x-3/4',
-                        index == carouselConfig?.length - 1 &&
-                          '-translate-x-3/4'
-                      )}
-                      key={i.title}
-                    >
-                      <Card src={i.src} title={i.title} />
-                    </CarouselItem>
+                    <Card
+                      key={item.title}
+                      src={item.src}
+                      title={item.title}
+                      description={item.description}
+                      isActive={isActive}
+                      index={index}
+                      currentIndex={current}
+                      onClick={() => handleCardClick(index)}
+                    />
                   )
                 })}
-              </CarouselContent>
-              <CarouselPrevious
-                onClick={handlePrev}
-                className='size-8 border-none [&>svg]:!size-8'
-              />
-              <CarouselNext
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
                 onClick={handleNext}
-                className='size-8 border-none [&>svg]:!size-8'
-              />
-            </Carousel>
+                className='absolute top-1/2 left-4 z-[4] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
+              >
+                <svg
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='text-white'
+                >
+                  <path
+                    d='M15 18L9 12L15 6'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={handlePrevious}
+                className='absolute top-1/2 right-4 z-[4] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
+              >
+                <svg
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='text-white'
+                >
+                  <path
+                    d='M9 18L15 12L9 6'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
