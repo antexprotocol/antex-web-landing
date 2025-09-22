@@ -161,10 +161,32 @@ export const SolarLayout = () => {
             direction={1}
             duration={Math.random() * 10 + 10}
             start={Math.random() * 90}
-            className='absolute aspect-square w-[60%]'
+            className='absolute aspect-square w-[40%]'
             children={
               <div className='bg-black'>
                 <img className='size-6' src='/home/brand-icon/ANTEX.svg' />
+              </div>
+            }
+          />
+          <Solar
+            direction={-1}
+            duration={Math.random() * 10 + 10}
+            start={Math.random() * 90}
+            className='absolute aspect-square w-[50%]'
+            children={
+              <div className='bg-black'>
+                <img className='size-6' src='/home/brand-icon/USDT.svg' />
+              </div>
+            }
+          />
+          <Solar
+            direction={1}
+            duration={Math.random() * 10 + 10}
+            start={Math.random() * 90}
+            className='absolute aspect-square w-[60%]'
+            children={
+              <div className='bg-black'>
+                <img className='size-6' src='/home/brand-icon/USDC.svg' />
               </div>
             }
           />
