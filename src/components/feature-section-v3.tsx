@@ -11,7 +11,7 @@ function FeatureItem({className,title,description}:{className:string,title:strin
       </div>
 }
 
-export default function FeatureSectionV2() {
+export default function FeatureSectionV3() {
 
   return <section id="feature-section-v3" className="min-h-svh relative z-1 flex items-center justify-center">
 
