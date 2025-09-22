@@ -11,10 +11,7 @@ const faqConfig = [
     q: "How do I start trading on AnteX?",
     a: (
       <>
-        Some Example Answers Here.{" "}
-        <a href={tradeUrl} className="underline text-brand">
-          TRADE NOW
-        </a>
+        Simply connect your crypto wallet (such as MetaMask, Phantom, or Backpack) to directly access the trading interface. No account registration or identity verification is required.
       </>
     ),
   },
@@ -22,10 +19,7 @@ const faqConfig = [
     q: "How can I get test funds?",
     a: (
       <>
-        Some Example Answers Here.{" "}
-        <a href={tradeUrl} className="underline text-brand">
-          TRADE NOW
-        </a>
+        On <a href={tradeUrl + '/en/faucet'} className="underline text-brand" >AnteX Faucet Page</a>, you can claim 1,000 mock USDT every 24 hours through the Faucet module for simulated trading and feature testing.
       </>
     ),
   },
@@ -33,10 +27,7 @@ const faqConfig = [
     q: "What order types does AnteX support?",
     a: (
       <>
-        Some Example Answers Here.{" "}
-        <a href={tradeUrl} className="underline text-brand">
-          TRADE NOW
-        </a>
+        Currently, AnteX supports Market Orders, Limit Orders, Stop-Limit Orders, and Stop-Market Orders, providing flexibility for different trading strategies.
       </>
     ),
   },
@@ -44,10 +35,7 @@ const faqConfig = [
     q: "What are the trading fees?",
     a: (
       <>
-        Some Example Answers Here.{" "}
-        <a href={tradeUrl} className="underline text-brand">
-          TRADE NOW
-        </a>
+        AnteX adopts a Maker/Taker fee model. Maker orders (adding liquidity) incur lower fees, while Taker orders (removing liquidity) are slightly higher. Fees are dynamically adjusted based on your trading volume and VIP tier.
       </>
     ),
   },
@@ -55,10 +43,7 @@ const faqConfig = [
     q: "Where can I get help if I encounter issues?",
     a: (
       <>
-        Some Example Answers Here.{" "}
-        <a href={tradeUrl} className="underline text-brand">
-          TRADE NOW
-        </a>
+        You can join the official AnteX communities on Discord or Telegram, or reach out to our support team at <a href="mailto:support@antex.ai" target="_blank" className="underline text-brand">support@antex.ai</a>.
       </>
     ),
   },
@@ -74,7 +59,7 @@ export const Faq = () => {
         </span>
       </div>
       <div className="overflow-hidden bg-linear-to-t from-[#000] to-[#666] rounded-[32px]">
-        <div className="mx-auto mt-px w-[calc(100%-2px)] py-14 px-24 bg-linear-to-t from-[#000] to-[#2f2f2f] rounded-[32px]">
+        <div className="[&_a]:contents mx-auto mt-px w-[calc(100%-2px)] py-14 px-24 bg-linear-to-t from-[#000] to-[#2f2f2f] rounded-[32px]">
           <Accordion
             type="multiple"
             collapsible
