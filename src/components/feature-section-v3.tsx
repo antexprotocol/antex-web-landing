@@ -1,21 +1,120 @@
 import tradePage from "../assets/antex-trade.png"
 import {cn} from "../utils"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
 
-function FeatureItem({className,title,description}:{className:string,title:string,description:string}) {
-  return <div className={cn("absolute z-5 w-[180px] h-[112px] drop-shadow-lg rounded-[12px] cursor-pointer glow-effect after:z-6",className)}>
+gsap.registerPlugin(ScrollTrigger);
+
+const FeatureItem = React.forwardRef<HTMLDivElement, {className:string,title:string,description:string}>(({className,title,description}, ref) => {
+  return <div ref={ref} className={cn("absolute z-5 w-[180px] h-[112px] drop-shadow-lg rounded-[12px] cursor-pointer glow-effect after:z-6",className)}>
       <div className="absolute z-7 inset-0.5 py-6 space-y-3 text-center bg-[linear-gradient(130deg,rgba(28,28,28,0.80)_0%,rgba(0,0,0,0.80)_100%)] hover-[linear-gradient(291deg,rgba(0,0,0,0.80)_0%,rgba(28,28,28,0.80)_100%)] hover:[&>h3]:text-brand  rounded-[10px]">
 
         <h3 className="text-base leading-4 transition-all">{title}</h3>
         <div className="max-w-[136px] mx-auto text-xs leading-3 text-t3">{description}</div>
         </div>
       </div>
-}
+});
+
+FeatureItem.displayName = "FeatureItem";
 
 export default function FeatureSectionV3() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const linkContainerRef = useRef<HTMLDivElement>(null);
+  const svgOverlayRef = useRef<HTMLDivElement>(null);
+  const featureItem1Ref = useRef<HTMLDivElement>(null);
+  const featureItem2Ref = useRef<HTMLDivElement>(null);
+  const featureItem3Ref = useRef<HTMLDivElement>(null);
+  const featureItem4Ref = useRef<HTMLDivElement>(null);
 
-  return <section id="feature-section-v3" className="min-h-svh relative z-1 flex items-center justify-center">
+  useEffect(() => {
+    if (imgRef.current && sectionRef.current && svgRef.current && svgOverlayRef.current && linkContainerRef.current &&
+        featureItem1Ref.current && featureItem2Ref.current && featureItem3Ref.current && featureItem4Ref.current) {
+      // Set initial states
+      gsap.set(imgRef.current, { width: "1200px" });
+      gsap.set(svgRef.current, { opacity: 0 });
+       gsap.set(svgOverlayRef.current, { scaleX: 1 });
+      gsap.set(linkContainerRef.current, { opacity: 0 });
 
-    <svg className="w-full" width={1440} height={320} viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" >
+      // Set initial x translate for feature items
+      gsap.set(featureItem1Ref.current, { x: -500 }); // Left items start off-screen left
+      gsap.set(featureItem2Ref.current, { x: 500 });  // Right items start off-screen right
+      gsap.set(featureItem3Ref.current, { x: -500 }); // Left items start off-screen left
+      gsap.set(featureItem4Ref.current, { x: 500 });  // Right items start off-screen right
+
+       // Create timeline for sequential animations
+       const tl = gsap.timeline({
+         scrollTrigger: {
+           trigger: sectionRef.current,
+           start: "top center",
+           end: "60% center",
+           scrub: 1,
+         }
+       });
+
+       // First: animate image width
+       tl.to(imgRef.current, {
+         width: "38%",
+         duration: 0.4,
+         ease: "power2.out",
+       })
+       // Then: animate SVG opacity to 100% immediately
+       .to(svgRef.current, {
+         opacity: 1,
+         duration: 0.1,
+         ease: "power2.out",
+       }, "-=0.05")
+       // Finally: animate svgOverlay scaleX from 1 to 0
+       .to(svgOverlayRef.current, {
+         scaleX: 0,
+         duration: 0.5,
+         ease: "power2.out",
+       }, "-=0.02")
+       // Then: animate linkContainer opacity from 0 to 1
+       .to(linkContainerRef.current, {
+         opacity: 1,
+         duration: 0.3,
+         ease: "power2.out",
+       }, "-=0.2")
+       // Finally: animate all feature items translateX to 0
+       .to([featureItem1Ref.current, featureItem2Ref.current, featureItem3Ref.current, featureItem4Ref.current], {
+         x: 0,
+         duration: 0.4,
+         ease: "power2.out",
+       }, "-=0.1")
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  return <>
+  <h2 className="text-center mt-[260px] max-w-[1200px] mx-auto  text-[64px]">Decentralized Exchange with Ultra-Fast Seamless Trading Experience</h2>
+  <section
+    ref={sectionRef}
+    id="feature-section-v3"
+    className="min-h-svh relative z-1 flex items-center justify-center"
+  >
+    <img
+      ref={imgRef}
+      src={tradePage.src}
+      id="trade-page-img"
+      alt="trade page"
+      className="absolute z-3 top-1/2 left-1/2 -translate-1/2 w-[38%]"
+    />
+
+    <svg
+      ref={svgRef}
+      className="w-full flow-svg"
+      width={1440}
+      height={320}
+      viewBox="0 0 1440 320"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <mask
         id="mask0_4831_31868"
         style={{ maskType: "alpha" }}
@@ -42,8 +141,16 @@ export default function FeatureSectionV3() {
         />
       </g>
     </svg>
-    <img src={tradePage.src} alt="trade page" className="absolute w-[38%] z-2 top-1/2 left-1/2 -translate-1/2" />
-    <div className="absolute z-3 w-[38%] aspect-[1200/619] bg-black/60 top-1/2 left-1/2 -translate-1/2 flex items-center justify-center">
+    <div
+      ref={svgOverlayRef}
+      className="svg-overlay w-full h-full bg-background absolute z-2 inset-0 scale-x-0"
+    ></div>
+
+    <div
+      ref={linkContainerRef}
+      id="link-container"
+      className="absolute z-4 w-[38%] aspect-[1200/619] bg-black/60 top-1/2 left-1/2 -translate-1/2 flex items-center justify-center"
+    >
       <a href="https://testnet.antex.ai" className="cursor-pointer transition-all bg-white text-black hover:bg-[#8678FD] hover:text-black hover:border-[#8678FD] hover:shadow-[0_0_100px_100px_rgba(134,120,253,0.03)] px-7 py-4 rounded-xl flex items-center justify-center border border-white gap-1.5 text-base">
           <span>Enter AnteX Testnet</span>
           <svg width={13} height={13} viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" >
@@ -60,13 +167,14 @@ export default function FeatureSectionV3() {
           </svg>
       </a>
     </div>
-    <div className="absolute z-4 left-1/2 top-1/2">
-      <FeatureItem className="right-[30vw] bottom-[100px]" title="Perpetual Trading" description="High-leverage, low-latency perpetual contract matching" />
-      <FeatureItem className="left-[30vw] bottom-[100px]" title="Spot Trading" description="Professional-grade order book spot trading experience" />
-      <FeatureItem className="right-[30vw] top-[100px]" title="ALP Liquidity Pool" description="Multi-esset unified liquidity pool, reducing slippage" />
-      <FeatureItem className="left-[30vw] top-[100px]" title="DeFi Ecosystem" description="High-performance L1 supporting lending, options, adex products" />
+    <div className="absolute z-5 left-1/2 top-1/2">
+      <FeatureItem ref={featureItem1Ref} className="right-[30vw] bottom-[100px] feature-left" title="Perpetual Trading" description="High-leverage, low-latency perpetual contract matching" />
+      <FeatureItem ref={featureItem2Ref} className="left-[30vw] bottom-[100px] feature-right" title="Spot Trading" description="Professional-grade order book spot trading experience" />
+      <FeatureItem ref={featureItem3Ref} className="right-[30vw] top-[100px] feature-left" title="ALP Liquidity Pool" description="Multi-esset unified liquidity pool, reducing slippage" />
+      <FeatureItem ref={featureItem4Ref} className="left-[30vw] top-[100px] feature-right" title="DeFi Ecosystem" description="High-performance L1 supporting lending, options, adex products" />
     </div>
 
 
   </section>
+  </>
 }
