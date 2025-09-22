@@ -96,7 +96,7 @@ export default function FeatureSectionV3() {
   <section
     ref={sectionRef}
     id="feature-section-v3"
-    className="min-h-svh relative z-1 flex items-center justify-center"
+    className="min-h-svh w-full relative z-1 flex items-center justify-center overflow-x-hidden"
   >
     <img
       ref={imgRef}
