@@ -493,10 +493,45 @@ section[aria-label*='Notification'] {
   background: var(--background);
   border-radius: inherit;
 }
-.glow-effect:hover {
+.glow-effect:not(.glow-animation):hover {
   --from-turn: 0.125turn;
-  --start-color: #6451fb;
+  --start-color: var(--brand);
   --via-color: #000;
+}
+.glow-animation {
+  animation: glow-animation-frames 5s linear infinite;
+}
+@keyframes glow-animation-frames {
+  0% {
+    --from-turn: -0.125turn;
+    --start-color: var(--brand);
+    --via-color: #000;
+    color: var(--brand);
+  }
+  50% {
+    --from-turn: 0.375turn;
+    --start-color: var(--brand);
+    --via-color: #000;
+    color: #fff;
+  }
+  100% {
+    --from-turn: 0.875turn;
+    --start-color: var(--brand);
+    --via-color: #000;
+    color: var(--brand);
+  }
+}
+.gray-scale-animation {
+  animation: gray-scale-animation-frames 5s linear infinite;
+}
+@keyframes gray-scale-animation-frames {
+  0%,
+  100% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(0%);
+  }
 }
 
 @layer base {

@@ -52,7 +52,8 @@ const Card = ({
     >
       <div
         className={cn(
-          'group glow-effect h-full w-full cursor-pointer rounded-[32px] after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C]'
+          'group glow-effect h-full w-full cursor-pointer rounded-[32px] after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C]',
+          isActive && 'glow-animation'
         )}
         onClick={onClick}
       >
@@ -61,11 +62,19 @@ const Card = ({
             'relative z-[4] flex h-full w-full flex-col items-center justify-center'
           )}
         >
-          <div className='mb-14 text-center text-2xl text-[#E2E6EE] transition-all duration-400 group-hover:text-[#6451fb]'>
+          <div
+            className={cn(
+              'mb-14 text-center text-2xl',
+              isActive ? 'text-inherit' : 'group-hover:text-[#6451fb]'
+            )}
+          >
             {title}
           </div>
           <img
-            className='size-75 grayscale-100 transition-all duration-400 group-hover:grayscale-0'
+            className={cn(
+              'size-75 grayscale-100 transition-all duration-400',
+              isActive ? 'gray-scale-animation' : 'group-hover:grayscale-0'
+            )}
             src={src}
           />
           <p className='text-t3 max-w-5/8 text-center text-xl font-light'>
