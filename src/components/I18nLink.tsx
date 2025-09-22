@@ -1,30 +1,30 @@
-import { useTranslation } from "react-i18next";
-import { tradeUrl } from "../constant";
-import { cn } from "../utils";
+import { useTranslation } from 'react-i18next'
+import { tradeUrl } from '../constant'
+import { cn } from '../utils'
 
 interface I18nLinkProps {
-  href: string;
-  children: React.ReactNode;
-  [key: string]: any;
+  href: string
+  children: React.ReactNode
+  [key: string]: any
 }
 
 export function I18nLink({ href, ...props }: I18nLinkProps) {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
-  if(props?.disabled) {
-    return <div {...props} className={cn(props?.className, '')} />;
+  if (props?.disabled) {
+    return <div {...props} className={cn(props?.className, '')} />
   }
 
   // If href starts with http or https, don't modify it
-  if (href.startsWith("http")) {
-    return <a href={href} {...props} />;
+  if (href.startsWith('http')) {
+    return <a href={href} {...props} />
   }
 
   // Remove leading slash if present
-  const path = href.startsWith("/") ? href.slice(1) : href;
+  const path = href.startsWith('/') ? href.slice(1) : href
 
   // Construct the localized path
-  const localizedHref = `${tradeUrl}/${i18n.language}/${path}`;
+  const localizedHref = `${tradeUrl}/${i18n.language}/${path}`
 
-  return <a href={localizedHref} {...props} />;
+  return <a href={localizedHref} {...props} />
 }

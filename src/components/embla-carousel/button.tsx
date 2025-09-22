@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import React, { useCallback, useEffect, useState } from 'react'
 
-export const usePrevNextButtons = (emblaApi) => {
+export const usePrevNextButtons = emblaApi => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
 
@@ -15,7 +15,7 @@ export const usePrevNextButtons = (emblaApi) => {
     emblaApi.scrollNext()
   }, [emblaApi])
 
-  const onSelect = useCallback((emblaApi) => {
+  const onSelect = useCallback(emblaApi => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev())
     setNextBtnDisabled(!emblaApi.canScrollNext())
   }, [])
@@ -31,17 +31,17 @@ export const usePrevNextButtons = (emblaApi) => {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
-    onNextButtonClick
+    onNextButtonClick,
   }
 }
 
-export const PrevButton = (props) => {
+export const PrevButton = props => {
   const { children, ...restProps } = props
 
   return (
     <button
-      className="embla__button embla__button--prev"
-      type="button"
+      className='embla__button embla__button--prev'
+      type='button'
       {...restProps}
     >
       <ChevronLeft />
@@ -49,13 +49,13 @@ export const PrevButton = (props) => {
   )
 }
 
-export const NextButton = (props) => {
+export const NextButton = props => {
   const { children, ...restProps } = props
 
   return (
     <button
-      className="embla__button embla__button--next"
-      type="button"
+      className='embla__button embla__button--next'
+      type='button'
       {...restProps}
     >
       <ChevronRight />

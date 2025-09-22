@@ -1,5 +1,5 @@
-import '../i18n';
+import '../i18n'
 
-export const ReactLayout = ({children}: any)=>{
-    return children
+export const ReactLayout = ({ children }: any) => {
+  return children
 }

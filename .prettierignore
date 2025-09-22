@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.astro/
+
+# Generated files
+*.d.ts
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Package manager files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Public assets (usually don't need formatting)
+public/
+
+# Temporary files
+astro_tmp_pages_*
