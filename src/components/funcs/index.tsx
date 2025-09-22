@@ -1,3 +1,14 @@
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+const Card = ({title, src}: any)=>{
+    return (<div className="group after:!bg-linear-to-l after:!from-[#000000] after:!to-[#1C1C1C] relative z-[1] w-[26.875rem] aspect-[430/600] glow-effect rounded-[32px]">
+        <div className="w-full z-[1] absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center">
+            <div className="text-center transition-all duration-400  group-hover:text-[#6451fb] text-2xl text-[#E2E6EE] mb-14">{title}</div>
+            <img className="grayscale-100 group-hover:grayscale-0 transition-all duration-400 size-75" src={src} />
+            <p className="text-t3 text-xl font-light max-w-5/8 text-center">Assets secured by PoS validators, fully verifiable and always user-controlled.</p>
+        </div>
+    </div>)
+}
 const Union = ({ className }: { className: string }) => {
     return (
         <svg
@@ -41,7 +52,20 @@ export const Funcs = () => {
                         <Union className="absolute top-3/4 left-1/16 opacity-40" />
                     </>
 
-                    <img className="w-[35.5rem]" src="/home/funcs-example.png"/>
+
+                    <div>
+
+                        <Carousel className="w-full max-w-md">
+                            <CarouselContent className="">
+                                <CarouselItem><Card src="/home/func/513.svg" title="User Asset Self-Custody"/></CarouselItem>
+                                <CarouselItem><Card src="/home/func/512.svg" title="Forced Withdrawal Protocol"/></CarouselItem>
+                                <CarouselItem><Card src="/home/func/516.svg" title="Premier Liquidity & Ultra-Low Slippage"/></CarouselItem>
+                            </CarouselContent>
+                            <CarouselPrevious className="size-8 [&>svg]:!size-8 border-none" />
+                            <CarouselNext className="size-8 [&>svg]:!size-8 border-none" />
+                        </Carousel>
+                    </div>
+                    {/* <img className="w-[35.5rem]" src="/home/funcs-example.png"/> */}
                 </div>
             </div>
         </div>
