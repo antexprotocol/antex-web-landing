@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
 import { medias } from '../constant'
 // import Image from "astro/components/Image.astro";
-import { LogoSpline } from './splines'
-import { I18nLink } from './I18nLink'
 import { ChevronDown } from 'lucide-react'
-import { cn } from '../utils'
 import { useIsMobile } from '../hooks/use-is-mobile'
+import { cn } from '../utils'
+import { I18nLink } from './I18nLink'
+import { LogoSpline } from './splines'
 
 function HomeSection() {
   const { t } = useTranslation()
