@@ -385,3 +385,39 @@ section[aria-label*="Notification"] {
     background-position: -600px center;
   }
 }
+
+@property --from-turn {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: -0.125turn;
+}
+
+@property --start-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --via-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000;
+}
+
+.glow-effect {
+  background-image: conic-gradient(from var(--from-turn), var(--start-color),  var(--via-color),  var(--via-color) ,  var(--via-color),  var(--start-color) 1turn);
+  transition: --from-turn 0.5s linear,--start-color 0.5s linear,--via-color 0.5s linear;
+}
+.glow-effect:after{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--background);
+  border-radius: inherit;
+}
+.glow-effect:hover {
+
+  --from-turn:0.125turn;
+  --start-color:#6451fb;
+  --via-color:#000;
+}

@@ -1,4 +1,16 @@
 import tradePage from "../assets/antex-trade.png"
+import {cn} from "../utils"
+
+function FeatureItem({className,title,description}:{className:string,title:string,description:string}) {
+  return <div className={cn("absolute z-5 w-[180px] h-[112px] drop-shadow-lg rounded-[12px] cursor-pointer glow-effect after:z-6",className)}>
+      <div className="absolute z-7 inset-0.5 py-6 space-y-3 text-center bg-[linear-gradient(130deg,rgba(28,28,28,0.80)_0%,rgba(0,0,0,0.80)_100%)] hover-[linear-gradient(291deg,rgba(0,0,0,0.80)_0%,rgba(28,28,28,0.80)_100%)] hover:[&>h3]:text-brand  rounded-[10px]">
+
+        <h3 className="text-base leading-4 transition-all">{title}</h3>
+        <div className="max-w-[136px] mx-auto text-xs leading-3 text-t3">{description}</div>
+        </div>
+      </div>
+}
+
 export default function FeatureSectionV2() {
 
   return <section id="feature-section-v3" className="min-h-svh relative z-1 flex items-center justify-center">
@@ -47,6 +59,12 @@ export default function FeatureSectionV2() {
             />
           </svg>
       </a>
+    </div>
+    <div className="absolute z-4 left-1/2 top-1/2">
+      <FeatureItem className="right-[30vw] bottom-[100px]" title="Perpetual Trading" description="High-leverage, low-latency perpetual contract matching" />
+      <FeatureItem className="left-[30vw] bottom-[100px]" title="Spot Trading" description="Professional-grade order book spot trading experience" />
+      <FeatureItem className="right-[30vw] top-[100px]" title="ALP Liquidity Pool" description="Multi-esset unified liquidity pool, reducing slippage" />
+      <FeatureItem className="left-[30vw] top-[100px]" title="DeFi Ecosystem" description="High-performance L1 supporting lending, options, adex products" />
     </div>
 
 
