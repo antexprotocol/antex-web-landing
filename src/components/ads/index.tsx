@@ -14,7 +14,7 @@ export const LaunchAd = () => {
         <div className='flex max-h-34 items-center gap-30'>
           <img className='w-[14.625rem]' src={'/home/antex-3d-icon.png'} />
           <a href={tradeUrl} className='cursor-pointer'>
-            <button className='flex cursor-pointer items-center justify-center gap-1 rounded-xl border border-white bg-[#3F339D] px-7 py-4 transition-all hover:border-[#8678FD] hover:bg-[#8678FD] hover:text-black'>
+            <button className='flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white px-7 py-4 text-base text-black transition-all duration-700 hover:bg-[#e5e5e5]'>
               <span className='text-base'>Enter AnteX Testnet</span>
               <svg
                 width='13'
