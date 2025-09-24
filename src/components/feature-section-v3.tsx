@@ -70,7 +70,7 @@ export default function FeatureSectionV3() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: '40% center',
-          end: 'bottom center',
+          end: 'end+=1000',
           scrub: 1,
           pin: true,
         },
