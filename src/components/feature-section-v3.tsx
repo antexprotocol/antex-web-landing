@@ -69,7 +69,7 @@ export default function FeatureSectionV3() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: '50% center',
+          start: '40% center',
           end: 'bottom center',
           scrub: 1,
           pin: true,
