@@ -13,6 +13,7 @@ const FeatureItem = React.forwardRef<
   return (
     <div
       ref={ref}
+      style={{ '--inset': '1px' } as React.CSSProperties}
       className={cn(
         'glow-effect absolute z-5 h-[112px] w-[180px] cursor-pointer rounded-[12px] drop-shadow-lg after:z-6',
         className

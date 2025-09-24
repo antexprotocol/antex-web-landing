@@ -489,7 +489,7 @@ section[aria-label*='Notification'] {
 .glow-effect:after {
   content: '';
   position: absolute;
-  inset: 2px;
+  inset: var(--inset, 2px);
   background: var(--background);
   border-radius: inherit;
 }
