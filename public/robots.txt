@@ -1,0 +1,30 @@
+# === Allow only English content indexing ===
+User-agent: *
+
+# Allow English pages
+Allow: /en/
+Allow: /en/*
+
+# Block all other languages
+Disallow: /zh/
+Disallow: /zh/*
+Disallow: /ko/
+Disallow: /ko/*
+Disallow: /vi/
+Disallow: /vi/*
+Disallow: /ja/
+Disallow: /ja/*
+
+# Disallow sensitive folders (if any)
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /api/
+
+# Allow static assets (for rendering)
+Allow: /*.js$
+Allow: /*.css$
+Allow: /assets/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.antex.ai/sitemap.xml
