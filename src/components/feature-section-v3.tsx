@@ -137,7 +137,7 @@ export default function FeatureSectionV3() {
   return (
     <>
       <h2 className='mx-auto mt-[260px] max-w-[1200px] text-center text-[64px]'>
-        Decentralized Exchange with Ultra-Fast Seamless Trading Experience
+        Core Trading & Liquidity Infrastructure
       </h2>
       <section
         ref={sectionRef}
