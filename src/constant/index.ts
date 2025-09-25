@@ -26,7 +26,7 @@ export const SEO_CONFIG = {
   keywords: 'AnteX, AnteX Exchange, Decentralized Perpetual Exchange, Perp DEX, On-chain Orderbook, Native Oracle Network, Cross-chain Liquidity, Trade Crypto Perps, Self-Custody Crypto Trading',
   url: 'https://antex.ai/',
   image:
-    'https://raw.githubusercontent.com/antexprotocol/brand/refs/heads/main/media/AnteX_poster.png',
+    'https://antex.ai/poster/AnteX_poster.png',
   type: 'website',
   locale: 'en_US',
   twitter: {
