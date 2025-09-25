@@ -22,7 +22,7 @@ const faqConfig = [
     a: (
       <>
         On{' '}
-        <a href={tradeUrl + '/en/faucet'} className='text-brand underline'>
+        <a target='_blank' href={tradeUrl + '/en/faucet'} className='text-brand underline'>
           AnteX Faucet Page
         </a>
         , you can claim 1,000 mock USDT every 24 hours through the Faucet module
