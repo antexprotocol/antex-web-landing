@@ -20,9 +20,10 @@ export const tradeUrl = isProd
 
 // src/config/seo.ts
 export const SEO_CONFIG = {
-  title: 'AnteX',
+  title: 'AnteX | Fully On-Chain Perpetual Exchange with Orderbook & Native Oracle',
   description:
-    'A Next-Gen DeFi Infrastructure Delivering Custody Freedom & CEX Performance',
+    'AnteX is a fully decentralized perpetual exchange powered by an on-chain orderbook, oracle network, and cross-chain protocol. Trade with CEX-like performance, while keeping full custody of your assets.',
+  keywords: 'AnteX, AnteX Exchange, Decentralized Perpetual Exchange, Perp DEX, On-chain Orderbook, Native Oracle Network, Cross-chain Liquidity, Trade Crypto Perps, Self-Custody Crypto Trading',
   url: 'https://antex.ai/',
   image:
     'https://raw.githubusercontent.com/antexprotocol/brand/refs/heads/main/media/AnteX_poster.png',

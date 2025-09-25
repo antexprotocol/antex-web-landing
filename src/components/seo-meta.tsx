@@ -13,6 +13,7 @@ export const SeoMeta = () => {
       <meta name='apple-mobile-web-app-capable' content='yes' />
       <meta name='apple-mobile-web-app-status-bar-style' content='black' />
 
+      <meta name="keywords" content={c.keywords} />
       {/* Open Graph / Facebook */}
       <meta property='og:type' content={c.type} />
       <meta property='og:title' content={c.title} />
