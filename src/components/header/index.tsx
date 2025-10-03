@@ -4,7 +4,7 @@ import { headerNavConfig } from '../../constant/nav'
 
 export const HeaderNav: React.FC<{ navConfig: any[] }> = ({ navConfig }) => {
   return (
-    <nav className='flex items-center space-x-6'>
+    <nav className='flex items-center space-x-6 text-sm'>
       {navConfig.map((item, idx) => (
         <NavItem key={idx} item={item} />
       ))}
@@ -41,23 +41,53 @@ const NavItem: React.FC<{ item: any }> = ({ item }) => {
       {typeof item.link === 'string' ? (
         <a
           href={item.link}
-          className='px-3 py-2 font-medium text-white transition-colors hover:text-[#6451fb]'
+          className='hover:text-brand flex items-center gap-1 px-3 py-2 font-medium text-white transition-colors'
         >
           {item.displayName}
+          {hasChildren && (
+            <svg
+              className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M19 9l-7 7-7-7'
+              />
+            </svg>
+          )}
         </a>
       ) : (
-        <div className='px-3 py-2 font-medium text-white transition-colors hover:text-[#6451fb]'>
+        <div className='hover:text-brand flex cursor-pointer items-center gap-1 px-3 py-2 font-medium text-white transition-colors'>
           {item.displayName}
+          {hasChildren && (
+            <svg
+              className={`size-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M19 9l-7 7-7-7'
+              />
+            </svg>
+          )}
         </div>
       )}
 
       {/* 子菜单 */}
       {hasChildren && (
         <div
-          className={`absolute top-full left-0 z-1 ${isOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
+          className={`absolute top-full left-0 z-[100] ${isOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
         >
           <div
-            className={`border-px mt-2 w-40 overflow-hidden rounded-xl border border-white/20 bg-black shadow-lg transition-opacity duration-200`}
+            className={`border-px mt-2 w-[120px] overflow-hidden rounded-xl border border-white/20 bg-black shadow-lg transition-opacity duration-200`}
           >
             {item.children.map((child, i) => (
               <a

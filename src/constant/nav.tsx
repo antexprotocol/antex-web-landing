@@ -3,7 +3,7 @@ import { medias } from '.'
 export const headerNavConfig = [
   {
     displayName: 'Developers',
-    link: 'https://antex-1.gitbook.io/doc',
+    link: 'https://docs.antex.ai/antex/antex-v1-architecture',
   },
   {
     displayName: 'Community',
