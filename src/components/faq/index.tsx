@@ -22,7 +22,11 @@ const faqConfig = [
     a: (
       <>
         On{' '}
-        <a target='_blank' href={tradeUrl + '/en/faucet'} className='text-brand underline'>
+        <a
+          target='_blank'
+          href={tradeUrl + '/en/faucet'}
+          className='text-brand underline'
+        >
           AnteX Faucet Page
         </a>
         , you can claim 1,000 mock USDT every 24 hours through the Faucet module
@@ -72,15 +76,17 @@ const faqConfig = [
 
 export const Faq = () => {
   return (
-    <div className='mx-auto max-w-[1440px] px-4 py-4 md:px-30 md:py-30'>
+    <div className='mx-auto max-w-[1440px] px-4 py-4 max-md:my-30 md:px-30 md:py-30'>
       <div className='mb-16 flex flex-col items-center gap-4'>
-        <p className='text-[64px]'>Frequently Asked Questions</p>
-        <span className='text-t3 text-2xl font-light'>
+        <h3 className='text-[64px] max-md:text-center max-md:text-4xl'>
+          Frequently Asked Questions
+        </h3>
+        <span className='text-t3 text-2xl font-light max-md:text-center max-md:text-lg'>
           Find answers to the most frequently asked questions about using AnteX.
         </span>
       </div>
-      <div className='overflow-hidden rounded-[32px] bg-linear-to-t from-[#000] to-[#666]'>
-        <div className='mx-auto mt-px w-[calc(100%-2px)] rounded-[32px] bg-linear-to-t from-[#000] to-[#2f2f2f] px-24 py-14 [&_a]:contents'>
+      <div className='overflow-hidden rounded-[32px] bg-linear-to-t from-[#000] to-[#666] max-md:rounded-2xl'>
+        <div className='mx-auto mt-px w-[calc(100%-2px)] rounded-[32px] bg-linear-to-t from-[#000] to-[#2f2f2f] px-24 py-14 max-md:rounded-2xl max-md:px-6 max-md:py-4 [&_a]:contents'>
           <Accordion
             type='multiple'
             collapsible
@@ -91,10 +97,10 @@ export const Faq = () => {
               return (
                 <AccordionItem value={i.q}>
                   <AccordionTrigger
-                    className='py-8 text-2xl font-light [&[data-state=open]>svg]:-rotate-45'
+                    className='items-center py-8 text-2xl font-light max-md:min-h-10 max-md:py-2 max-md:text-sm [&[data-state=open]>svg]:-rotate-45'
                     icon={
                       <svg
-                        className='transition'
+                        className='transition max-md:size-6'
                         width='41'
                         height='40'
                         viewBox='0 0 41 40'

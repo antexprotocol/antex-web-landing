@@ -2,18 +2,21 @@ import { tradeUrl } from '../../constant'
 
 export const LaunchAd = () => {
   return (
-    <div className='relative max-h-34 overflow-hidden bg-[#7878FA]'>
-      <div className='mx-auto flex max-w-[1440px] items-center justify-between px-4 md:px-30'>
+    <div className='relative max-h-34 overflow-hidden bg-[#7878FA] max-md:max-h-none'>
+      <div className='mx-auto flex max-w-[1440px] items-center justify-between px-8 max-md:flex-col max-md:py-8 md:px-30'>
         <div>
-          <p className='text-xl'>Unlock Financial Freedom</p>
-          <p className='text-base font-light'>
+          <p className='text-xl max-md:text-center'>Unlock Financial Freedom</p>
+          <p className='text-base font-light max-md:text-center'>
             Self-Custody · Omnichain Liquidity · CEX-Level Experience
           </p>
         </div>
 
-        <div className='flex max-h-34 items-center gap-30'>
-          <img className='w-[14.625rem]' src={'/home/antex-3d-icon.png'} />
-          <a href={tradeUrl} className='cursor-pointer'>
+        <div className='flex max-h-34 items-center gap-30 max-md:max-h-none max-md:flex-col max-md:gap-4'>
+          <img
+            className='w-[14.625rem] max-md:hidden'
+            src={'/home/antex-3d-icon.png'}
+          />
+          <a href={tradeUrl} className='cursor-pointer max-md:mt-8'>
             <button className='flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white px-7 py-4 text-base text-black transition-all duration-700 hover:bg-[#e5e5e5]'>
               <span className='text-base'>Enter AnteX Testnet</span>
               <svg

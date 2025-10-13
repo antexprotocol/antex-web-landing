@@ -44,10 +44,12 @@ const Card = ({
   return (
     <div
       className={cn(
-        'absolute top-1/2 left-1/2 flex aspect-[430/600] w-[26.875rem] -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out',
+        'absolute top-1/2 left-1/2 flex aspect-[430/600] w-[26.875rem] -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out max-md:w-full',
         isActive ? 'z-[5]' : 'z-[1]',
-        isPrevious && 'previous-item -translate-x-[calc(50%+60px)] scale-85',
-        isNext && 'next-item translate-x-[calc(-50%+60px)] scale-85'
+        isPrevious &&
+          'previous-item -translate-x-[calc(50%+60px)] scale-85 max-md:-translate-x-[calc(50%+40px)]',
+        isNext &&
+          'next-item translate-x-[calc(-50%+60px)] scale-85 max-md:translate-x-[calc(-50%+40px)]'
       )}
     >
       <div
@@ -59,12 +61,12 @@ const Card = ({
       >
         <div
           className={cn(
-            'relative z-[4] flex h-full w-full flex-col items-center justify-center'
+            'relative z-[4] flex h-full w-full flex-col items-center justify-center max-md:px-4'
           )}
         >
           <div
             className={cn(
-              'mb-14 text-center text-2xl',
+              'mb-14 text-center text-2xl max-md:text-lg',
               isActive ? 'text-inherit' : 'group-hover:text-[#6451fb]'
             )}
           >
@@ -72,12 +74,12 @@ const Card = ({
           </div>
           <img
             className={cn(
-              'size-75 grayscale-100 transition-all duration-400',
+              'size-75 grayscale-100 transition-all duration-400 max-md:size-50',
               isActive ? 'gray-scale-animation' : 'group-hover:grayscale-0'
             )}
             src={src}
           />
-          <p className='text-t3 max-w-5/8 text-center text-xl font-light'>
+          <p className='text-t3 max-w-5/8 text-center text-xl font-light max-md:text-base'>
             {description}
           </p>
         </div>
@@ -121,9 +123,9 @@ export const Funcs = () => {
   }
 
   return (
-    <div className='py-4 md:py-30'>
+    <div className='py-30 max-md:pb-0'>
       <div className='mb-16 flex flex-col items-center gap-4'>
-        <p className='text-[64px]'>Unparalleled Security</p>
+        <p className='text-[64px] max-md:text-4xl'>Unparalleled Security</p>
       </div>
 
       <div className='relative overflow-hidden'>
@@ -136,14 +138,14 @@ export const Funcs = () => {
         <div className='relative z-[3] mx-auto flex h-full max-w-[1440px] items-center justify-center px-4 md:px-30'>
           <>
             <Union className='absolute top-1/12 right-1/8 opacity-60' />
-            <Union className='absolute top-1/3 right-1/16 opacity-60' />
-            <Union className='absolute top-3/4 right-1/8 opacity-60' />
-            <Union className='absolute top-1/4 left-1/8 opacity-60' />
-            <Union className='absolute top-3/4 left-1/16 opacity-40' />
+            <Union className='absolute top-1/3 right-1/16 opacity-60 max-md:top-0' />
+            <Union className='absolute top-3/4 right-1/8 opacity-60 max-md:top-auto max-md:bottom-[20px]' />
+            <Union className='absolute top-1/4 left-1/8 opacity-60 max-md:top-[20px]' />
+            <Union className='absolute top-3/4 left-1/16 opacity-40 max-md:top-auto max-md:bottom-[30px]' />
           </>
 
           <div className='relative flex h-[600px] w-full items-center justify-center'>
-            <div className='relative flex h-full w-full max-w-[600px] items-center justify-center'>
+            <div className='relative flex h-full w-[80vw] max-w-[600px] items-center justify-center'>
               {/* Custom Carousel Container */}
               <div className='relative flex h-full w-full items-center justify-center'>
                 {carouselConfig?.map((item, index) => {
@@ -166,7 +168,7 @@ export const Funcs = () => {
               {/* Navigation Buttons */}
               <button
                 onClick={handleNext}
-                className='absolute top-1/2 left-4 z-[4] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
+                className='absolute top-1/2 left-4 z-[1000] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
               >
                 <svg
                   width='16'
@@ -188,7 +190,7 @@ export const Funcs = () => {
 
               <button
                 onClick={handlePrevious}
-                className='absolute top-1/2 right-4 z-[4] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
+                className='absolute top-1/2 right-4 z-[1000] flex h-8 w-8 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 transition-all duration-200 hover:bg-black/70'
               >
                 <svg
                   width='16'

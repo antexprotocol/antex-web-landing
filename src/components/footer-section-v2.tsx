@@ -1,15 +1,15 @@
 import { useInViewport } from 'ahooks'
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@radix-ui/react-accordion'
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
-import { env, medias } from '../constant'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from '@radix-ui/react-accordion'
+import { medias } from '../constant'
 import { I18nLink } from './I18nLink'
 
 const products = [
@@ -227,17 +227,12 @@ function FooterSection() {
               inViewport ? 'translate-y-0' : 'translate-y-20'
             )}
           >
-            <Accordion
-              type='single'
-              collapsible
-              className='w-full'
-              defaultValue='item-1'
-            >
-              <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-base font-semibold'>
+            <div className='w-full max-md:flex max-md:[&>div]:flex-1'>
+              <div>
+                <div className='mb-4 text-lg font-semibold text-white'>
                   {t('Products', { defaultValue: 'Products' })}
-                </AccordionTrigger>
-                <AccordionContent>
+                </div>
+                <div>
                   <ul className='space-y-4'>
                     {products.map(item => (
                       <li key={item.name}>
@@ -250,8 +245,8 @@ function FooterSection() {
                       </li>
                     ))}
                   </ul>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              </div>
               {/* <AccordionItem value="item-2">
                 <AccordionTrigger className="text-base font-semibold">{t("Services", { defaultValue: "Services" })}</AccordionTrigger>
                 <AccordionContent>
@@ -266,11 +261,11 @@ function FooterSection() {
                   </ul>
                 </AccordionContent>
               </AccordionItem> */}
-              <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-base font-semibold'>
+              <div>
+                <div className='mb-4 text-lg font-semibold text-white'>
                   {t('community', { defaultValue: 'Community' })}
-                </AccordionTrigger>
-                <AccordionContent>
+                </div>
+                <div>
                   <ul className='space-y-4'>
                     {community.map(item => (
                       <li key={item.name}>
@@ -284,9 +279,9 @@ function FooterSection() {
                       </li>
                     ))}
                   </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

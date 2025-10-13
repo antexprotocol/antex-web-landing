@@ -1,3 +1,4 @@
+import { useIsMobile } from '@/hooks/use-is-mobile'
 import tradePage from '../assets/antex-trade.png'
 import { cn } from '../utils'
 import { gsap } from 'gsap'
@@ -31,6 +32,7 @@ const FeatureItem = React.forwardRef<
 FeatureItem.displayName = 'FeatureItem'
 
 export default function FeatureSectionV3() {
+  const isMobile = useIsMobile()
   const sectionRef = useRef<HTMLElement>(null)
   const imgRef = useRef<HTMLImageElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
@@ -42,6 +44,7 @@ export default function FeatureSectionV3() {
   const featureItem4Ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (isMobile) return
     if (
       imgRef.current &&
       sectionRef.current &&
@@ -136,13 +139,13 @@ export default function FeatureSectionV3() {
 
   return (
     <>
-      <h2 className='mx-auto mt-[260px] max-w-[1200px] text-center text-[64px]'>
+      <h2 className='mx-auto mt-[260px] max-w-[1200px] text-center text-[64px] max-md:hidden'>
         Core Trading & Liquidity Infrastructure
       </h2>
       <section
         ref={sectionRef}
         id='feature-section-v3'
-        className='relative z-1 flex min-h-svh w-full items-center justify-center overflow-x-hidden'
+        className='relative z-1 flex min-h-svh w-full items-center justify-center overflow-x-hidden max-md:hidden'
       >
         <img
           ref={imgRef}

@@ -124,10 +124,10 @@ export const SolarLayout = () => {
   return (
     <div className='relative flex items-center justify-center'>
       <div className='absolute top-1/2 left-1/2 z-[2] -mt-10 flex w-full -translate-1/2 flex-col items-center gap-8 text-white'>
-        <p className='text-center text-[72px] leading-[1.1] uppercase'>
+        <p className='text-center text-[72px] leading-[1.1] uppercase max-md:text-4xl'>
           Redefine Trading <br /> with Blockchain
         </p>
-        <span className='text-xl font-light text-white/80'>
+        <span className='text-xl font-light text-white/80 max-md:text-lg'>
           Trade Anywhere. Own Everything. Stay Secure.
         </span>
         <a href={tradeUrl} className='cursor-pointer'>
@@ -154,7 +154,7 @@ export const SolarLayout = () => {
           </button>
         </a>
       </div>
-      <div className='relative h-screen w-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000]'>
+      <div className='relative h-[calc(100vh-78px)] w-screen overflow-hidden rounded-b-[90px] bg-linear-to-t from-[#6451fb] to-[#000000] max-md:h-[calc(100vh-70px)] max-md:rounded-b-[40px]'>
         <XRayPanel className='absolute size-full' />
         <div className='relative z-[1] flex size-full translate-y-[60%] items-center justify-center opacity-40'>
           <Solar
