@@ -39,6 +39,11 @@ const community = [
   // { name: "Crypto Directory", href: "#" },
 ]
 
+const about = [
+  { name: 'Terms & Conditions', href: 'https://docs.antex.ai/resources/risk-disclaimer/terms-and-conditions' },
+  { name: 'Privacy Policy', href: 'https://docs.antex.ai/resources/risk-disclaimer/privacy-policy' },
+]
+
 const socials = [
   {
     icon: (
@@ -219,6 +224,25 @@ function FooterSection() {
                 ))}
               </ul>
             </div>
+
+            <div>
+              <div className='mb-4 text-lg font-semibold text-white'>
+                {t('aboutUs', { defaultValue: 'About Us' })}
+              </div>
+              <ul className='space-y-4'>
+                {about.map(item => (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      target='_blank'
+                      className='transition hover:text-white'
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div
@@ -268,6 +292,27 @@ function FooterSection() {
                 <div>
                   <ul className='space-y-4'>
                     {community.map(item => (
+                      <li key={item.name}>
+                        <a
+                          href={item.href}
+                          target='_blank'
+                          className='text-sm transition hover:text-white'
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+                   <div>
+                <div className='mb-4 text-lg font-semibold text-white'>
+                  {t('aboutUs',{ defaultValue: 'About Us' })}
+                </div>
+                <div>
+                  <ul className='space-y-4'>
+                    {about.map(item => (
                       <li key={item.name}>
                         <a
                           href={item.href}
