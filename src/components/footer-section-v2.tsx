@@ -40,8 +40,18 @@ const community = [
 ]
 
 const about = [
-  { name: 'Terms & Conditions', href: 'https://docs.antex.ai/resources/risk-disclaimer/terms-and-conditions' },
-  { name: 'Privacy Policy', href: 'https://docs.antex.ai/resources/risk-disclaimer/privacy-policy' },
+  {
+    name: 'Privacy Policy',
+    href: 'https://docs.antex.ai/resources/risk-disclaimer/privacy-policy',
+  },
+  {
+    name: ' Risk Disclaimer',
+    href: 'https://docs.antex.ai/resources/risk-disclaimer',
+  },
+  {
+    name: 'Terms & Conditions',
+    href: 'https://docs.antex.ai/resources/risk-disclaimer/terms-and-conditions',
+  },
 ]
 
 const socials = [
@@ -306,9 +316,9 @@ function FooterSection() {
                 </div>
               </div>
 
-                   <div>
+              <div>
                 <div className='mb-4 text-lg font-semibold text-white'>
-                  {t('aboutUs',{ defaultValue: 'About Us' })}
+                  {t('aboutUs', { defaultValue: 'About Us' })}
                 </div>
                 <div>
                   <ul className='space-y-4'>
