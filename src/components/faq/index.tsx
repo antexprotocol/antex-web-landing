@@ -89,9 +89,8 @@ export const Faq = () => {
         <div className='mx-auto mt-px w-[calc(100%-2px)] rounded-[32px] bg-linear-to-t from-[#000] to-[#2f2f2f] px-24 py-14 max-md:rounded-2xl max-md:px-6 max-md:py-4 [&_a]:contents'>
           <Accordion
             type='multiple'
-            collapsible
             className='w-full'
-            defaultValue='item-1'
+            defaultValue={['item-1']}
           >
             {faqConfig.map(i => {
               return (
