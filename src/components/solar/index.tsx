@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { tradeUrl } from '../../constant'
+import { env, tradeUrl } from '../../constant'
 import { cn } from '../../utils'
 
 export const Solar = ({
@@ -132,7 +132,7 @@ export const SolarLayout = () => {
         </span>
         <a href={tradeUrl} className='cursor-pointer'>
           <button className='flex cursor-pointer items-center justify-center gap-1 rounded-xl border border-white px-7 py-4 transition-all hover:border-[#8678FD] hover:bg-[#8678FD] hover:text-black'>
-            <span className='text-base'>Enter AnteX Testnet</span>
+            <span className='text-base'>Enter {env.SYSTEM_NAME} Testnet</span>
             <svg
               width='13'
               height='13'

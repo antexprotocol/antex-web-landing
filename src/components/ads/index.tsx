@@ -1,4 +1,4 @@
-import { tradeUrl } from '../../constant'
+import { env, tradeUrl } from '../../constant'
 
 export const LaunchAd = () => {
   return (
@@ -18,7 +18,7 @@ export const LaunchAd = () => {
           />
           <a href={tradeUrl} className='cursor-pointer max-md:mt-8'>
             <button className='flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white px-7 py-4 text-base text-black transition-all duration-700 hover:bg-[#e5e5e5]'>
-              <span className='text-base'>Enter AnteX Testnet</span>
+              <span className='text-base'>Enter {env.SYSTEM_NAME} Testnet</span>
               <svg
                 width='13'
                 height='13'

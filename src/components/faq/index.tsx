@@ -1,4 +1,4 @@
-import { tradeUrl } from '../../constant'
+import { env, tradeUrl } from '../../constant'
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +8,7 @@ import {
 
 const faqConfig = [
   {
-    q: 'How do I start trading on AnteX?',
+    q: `How do I start trading on ${env.SYSTEM_NAME}?`,
     a: (
       <>
         Simply connect your crypto wallet (such as MetaMask, Phantom, or
@@ -27,7 +27,7 @@ const faqConfig = [
           href={tradeUrl + '/en/faucet'}
           className='text-brand underline'
         >
-          AnteX Faucet Page
+          {env.SYSTEM_NAME} Faucet Page
         </a>
         , you can claim 1,000 mock USDT every 24 hours through the Faucet module
         for simulated trading and feature testing.
@@ -35,12 +35,12 @@ const faqConfig = [
     ),
   },
   {
-    q: 'What order types does AnteX support?',
+    q: `What order types does ${env.SYSTEM_NAME} support?`,
     a: (
       <>
-        Currently, AnteX supports Market Orders, Limit Orders, Stop-Limit
-        Orders, and Stop-Market Orders, providing flexibility for different
-        trading strategies.
+        Currently, {env.SYSTEM_NAME} supports Market Orders, Limit Orders,
+        Stop-Limit Orders, and Stop-Market Orders, providing flexibility for
+        different trading strategies.
       </>
     ),
   },

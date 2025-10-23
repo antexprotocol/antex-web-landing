@@ -4,6 +4,7 @@ import { cn } from '../utils'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useEffect, useRef } from 'react'
+import { env } from '@/constant'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -182,7 +183,7 @@ export default function FeatureSectionV3() {
             href='https://testnet.antex.ai'
             className='flex cursor-pointer items-center justify-center gap-1.5 rounded-xl border border-white bg-white px-7 py-4 text-base text-black transition-all hover:border-[#8678FD] hover:bg-[#8678FD] hover:text-black hover:shadow-[0_0_100px_100px_rgba(134,120,253,0.03)]'
           >
-            <span>Enter AnteX Testnet</span>
+            <span>Enter {env.SYSTEM_NAME} Testnet</span>
             <svg
               width={13}
               height={13}
