@@ -48,10 +48,10 @@ const faqConfig = [
     q: 'What are the trading fees?',
     a: (
       <>
-        AnteX adopts a Maker/Taker fee model. Maker orders (adding liquidity)
-        incur lower fees, while Taker orders (removing liquidity) are slightly
-        higher. Fees are dynamically adjusted based on your trading volume and
-        VIP tier.
+        {env.SYSTEM_NAME} adopts a Maker/Taker fee model. Maker orders (adding
+        liquidity) incur lower fees, while Taker orders (removing liquidity) are
+        slightly higher. Fees are dynamically adjusted based on your trading
+        volume and VIP tier.
       </>
     ),
   },
@@ -59,10 +59,10 @@ const faqConfig = [
     q: 'Where can I get help if I encounter issues?',
     a: (
       <>
-        You can join the official AnteX communities on Discord or Telegram, or
-        reach out to our support team at{' '}
+        You can join the official {env.SYSTEM_NAME} communities on Discord or
+        Telegram, or reach out to our support team at{' '}
         <a
-          href='mailto:support@antex.ai'
+          href='mailto:support@antx.ai'
           target='_blank'
           className='text-brand underline'
         >
@@ -82,7 +82,8 @@ export const Faq = () => {
           Frequently Asked Questions
         </h3>
         <span className='text-t3 text-2xl font-light max-md:text-center max-md:text-lg'>
-          Find answers to the most frequently asked questions about using AnteX.
+          Find answers to the most frequently asked questions about using{' '}
+          {env.SYSTEM_NAME}.
         </span>
       </div>
       <div className='overflow-hidden rounded-[32px] bg-linear-to-t from-[#000] to-[#666] max-md:rounded-2xl'>

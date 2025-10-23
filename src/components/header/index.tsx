@@ -232,7 +232,7 @@ export const Header = () => {
         <div className='flex items-center gap-10'>
           <img
             className='w-[6.25rem]'
-            src='/brand/AnteX-logo-Horizontal-White.svg'
+            src='/brand/AntX-logo-Horizontal-White.svg'
           />
 
           {/* Desktop Navigation - Hidden on mobile */}

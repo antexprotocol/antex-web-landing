@@ -164,7 +164,7 @@ export const SolarLayout = () => {
             className='absolute aspect-square w-[40%]'
             children={
               <div className='bg-black'>
-                <img className='size-6' src='/home/brand-icon/ANTEX.svg' />
+                <img className='size-6' src='/home/brand-icon/ANTX.svg' />
               </div>
             }
           />

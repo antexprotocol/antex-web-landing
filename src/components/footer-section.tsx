@@ -73,7 +73,7 @@ function FooterSection() {
           >
             <div className='flex items-center gap-3'>
               <img
-                src='/brand/AnteX-logo-Horizontal-White.svg'
+                src='/brand/AntX-logo-Horizontal-White.svg'
                 className='w-[120px] md:w-[154px]'
                 alt='logo'
               />

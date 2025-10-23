@@ -41,7 +41,7 @@ function HomeSection() {
       <header className='absolute top-10 left-1/2 z-[4] flex h-12 w-full -translate-x-1/2 items-center justify-between text-sm md:w-[1200px] [&_a:not(.hover-none)]:hover:underline'>
         <I18nLink href='/' className='hover-none pc'>
           <img
-            src='/brand/AnteX-logo-Horizontal-White.svg'
+            src='/brand/AntX-logo-Horizontal-White.svg'
             alt='logo'
             width={154}
             height={37}
