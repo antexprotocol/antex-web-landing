@@ -27,4 +27,4 @@ Allow: /assets/
 Allow: /images/
 
 # Sitemap location
-Sitemap: https://www.antex.ai/sitemap.xml
+Sitemap: https://www.antxfi.com/sitemap.xml

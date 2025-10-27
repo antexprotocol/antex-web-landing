@@ -180,7 +180,7 @@ export default function FeatureSectionV3() {
           className='absolute top-1/2 left-1/2 z-4 flex aspect-[1200/619] w-[38%] -translate-1/2 items-center justify-center bg-black/60'
         >
           <a
-            href='https://testnet.antex.ai'
+            href='https://testnet.antxfi.com'
             className='flex cursor-pointer items-center justify-center gap-1.5 rounded-xl border border-white bg-white px-7 py-4 text-base text-black transition-all hover:border-[#8678FD] hover:bg-[#8678FD] hover:text-black hover:shadow-[0_0_100px_100px_rgba(134,120,253,0.03)]'
           >
             <span>Enter {env.SYSTEM_NAME} Testnet</span>

@@ -42,15 +42,15 @@ const community = [
 const about = [
   {
     name: 'Privacy Policy',
-    href: 'https://docs.antex.ai/resources/risk-disclaimer/privacy-policy',
+    href: 'https://docs.antxfi.com/resources/risk-disclaimer/privacy-policy',
   },
   {
     name: ' Risk Disclaimer',
-    href: 'https://docs.antex.ai/resources/risk-disclaimer',
+    href: 'https://docs.antxfi.com/resources/risk-disclaimer',
   },
   {
     name: 'Terms & Conditions',
-    href: 'https://docs.antex.ai/resources/risk-disclaimer/terms-and-conditions',
+    href: 'https://docs.antxfi.com/resources/risk-disclaimer/terms-and-conditions',
   },
 ]
 

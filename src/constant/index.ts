@@ -1,12 +1,12 @@
 export const isProd = false
 
 export const medias = {
-  telegram: 'https://t.me/AntX_DEX',
+  telegram: 'https://t.me/AntX_Fi',
   x: 'https://x.com/AntX_Fi',
   twitter: 'https://x.com/AntX_Fi',
   medium: 'https://medium.com/@AntX_Fi',
-  gitbook: 'https://docs.antex.ai/',
-  linkTr: 'https://linktr.ee/antex.ai',
+  gitbook: 'https://docs.antxfi.com/',
+  linkTr: 'https://linktr.ee/antxfi.com',
   discord: 'https://discord.gg/AntX',
 }
 
@@ -15,8 +15,8 @@ export const env = {
 }
 
 export const tradeUrl = isProd
-  ? 'https://app.antex.ai'
-  : 'https://testnet.antex.ai'
+  ? 'https://app.antxfi.com'
+  : 'https://testnet.antxfi.com'
 
 // src/config/seo.ts
 export const SEO_CONFIG = {
@@ -26,8 +26,8 @@ export const SEO_CONFIG = {
     'AntX is a fully decentralized perpetual exchange powered by an on-chain orderbook, oracle network, and cross-chain protocol. Trade with CEX-like performance, while keeping full custody of your assets.',
   keywords:
     'AntX, AntX Exchange, Decentralized Perpetual Exchange, Perp DEX, On-chain Orderbook, Native Oracle Network, Cross-chain Liquidity, Trade Crypto Perps, Self-Custody Crypto Trading',
-  url: 'https://antex.ai/',
-  image: 'https://antex.ai/poster/AntX_poster.png',
+  url: 'https://antxfi.com/',
+  image: 'https://antxfi.com/poster/AntX_poster.png',
   type: 'website',
   locale: 'en_US',
   twitter: {

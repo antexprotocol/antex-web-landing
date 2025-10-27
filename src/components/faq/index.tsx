@@ -66,7 +66,7 @@ const faqConfig = [
           target='_blank'
           className='text-brand underline'
         >
-          support@antex.ai
+          support@antxfi.com
         </a>
         .
       </>
